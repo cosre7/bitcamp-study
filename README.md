@@ -144,9 +144,76 @@
         - *.java 형태의 소스 파일을 컴파일러를 통해 *.class 형태의 가상의 기계어로 컴파일한 후 각 OS별 JVM을 통해 실행되는 방식이다.
         - 때문에 write once run anywhere! 이라는 사명으로 각 OS에 맞는 형태의 컴파일은 불필요하며 실행 시에 각 OS에 맞는 JVM을 통해 실행된다.
         
-
-
-
-
-
 get-filehash -algorithm sha512 'apache-tomcat-9.0.41.zip' -> sha512 hash code 뽑아내는 명령어
+## 10일차(2021-01-05,화)
+
+- 컴파일 방식 프로그래밍 경험
+    - GCC 컴파일러(MinGW) 설치
+    - hello.c 소스 작성
+    - 컴파일 및 실행
+- JDK와 JRE, JavaSE, JavaEE, JavaME 소개
+- JDK 및 Eclipse IDE 설치 및 설정
+
+
+- 학습 목표 달성 확인 목록
+    - [] 컴파일 방식과, 인터프리터 방식, 하이브리드 방식의 특징을 설명할 수 있는가?
+    - [] 컴파일/인터프리터/하이브리드 방식의 예제를 작성하고 실행시킬 수 있는가?
+    - [] GUI와 CLI가 무엇인지 알고 있다.
+    - [] OS에서 shell 과 Shell Script 의 관계를 이해한다.
+    - [] 윈도우 OS에서 '명령프롬프트'와 '파워쉘'의 차이점을 이해한다.
+    - [] 해시 값/디지털 지문이 무엇인지 알고 있다.
+    - [] 알고리즘의 뜻을 말할 수 있다.
+    - [] MD5, SHA-1, SHA256, SHA512, PGP 등이 무엇을 의미하는지 알고 있다.
+    - [] Windows/macOS 에서 명령어를 사용하여 해시 코드를 알아 낼 수 있다.
+    - [] JDK를 설치하고 환경 변수(JAVA_HOME, PATH)를 설정할 수 있는가?
+    - [] Java IDE(Integrated Development Environment, 예: Eclipse)를 설치하고 설정할 수 있는가?
+
+2021-01-06
+cmd에서 java -version 이라고 치면 환경 변수에서 path에 등록한 경로가 나온다.
+ 
+ JAVA_HOME은 jdk가 어떤 디렉토리에 있는지 물어보는 프로그램이 있을 때 알려주는 경로
+    - 안한 상태에서 이클립스까지 설치 후 실행
+    - java.exe 는 path에 등록되어있어서 실행에 문제 없음
+    - 컴파일 할 때 필요한 jre를 확인할 때에 이클립스 자체에 설치되어 있는 jre가 아닌
+      내가 설정한 jdk를 사용하고 싶을 때 JAVA_HOME을 해두면 이것이 자동으로 설정된다.
+
+ bin: binary -> 왠만한 실행파일들이 들어있는 폴더 -> path 경로에 bin까지 지정해줘야 하는 이유
+    - exe 파일에서 dll 파일에 들어있는 기계어를 사용해서 실행한다.
+ lib: 다른 개발자가 프로그램을 짜놓은 명령어들이 들어있는 폴더
+
+ 환경변수: 특정 이름으로 경로를 설정해두면 경로가 필요한 프로그램이 자동으로 찾아갈 수 있도록 해주는 것
+path설정을 하지 않을 경우 컴파일 시 마다 jdk가 들어있는 폴더 경로를 적은 후에 컴파일을 해야 한다.
+    - C:\java\graalvm-ce-java11-20.3.0\bin\javac Hello.java 라고 해야 한다.
+    - path 설정에 C:\java\graalvm-ce-java11-20.3.0\bin 이라고 해두었기 때문에 컴파일 시에 javac Hello.java라고만 하면 되는 것이다.
+    - 환경변수의 경우 위에 있는 것부터 찾아서 하기 때문에 제일 위로 올려주어야 한다.
+    - 환경변수를 바꾸고 나면 cmd(명령창)을 껐다가 다시 켜야 한다.
+
+1. 직접 바이트코드 작성해보기 -> "바이트코드는 할게 못된다" 만 기억하기
+    - sublime editor -> download(windows 64bit) -> 다음 다음 인스톨
+    - file - save with encoding - hexa~ -> bitcamp-study -> HelloWorld.class 생성
+    - bytecode hello world programming 구글링 -> Writing Hello World in Java byte code 클릭
+    - CLASS 만들기 
+        1) ca fe ba be -> 이 클래스는 바이트코드다
+        2) 00 00 -> minor version
+        3) 00 34 -> major version (각각의 버전마다 있는 고유의 번호 ex. 52.0 일 경우 minor version = 0 major version = 52)
+        4) 00 00
+        5) 00 21 -> public
+        6) 00 00 -> this class
+        7) 00 00
+        8) 00 00
+        9) 00 00
+        10) 00 00
+        11) 00 00
+        12) 00 00
+        -> public class ??? {
+
+        } 
+        라고 출력
+    - cmd(명령창) -> javap *.class 라고 하면 바이트코드를 읽어오는 명령어
+        - 00 03 상수 pool 2일 경우 1+2(상수 수)로 00 03
+        - 07 00 02 -> 2번째 상수가 클래스 이름이다.
+    - HelloWorld 만들기
+        - 01 00 0a 48 65 6c 6c 6f 57 6f 72 6c 64 -> 1번 데이터: 10바이트 (00 0a)로 이루어진 H e l l o W o r l d
+    -> https://medium.com/@davethomas_9528/writing-hello-world-in-java-byte-code-34f75428e0ad 사이트에 자세한 설명.
+    - 0x -> 16진수라는 뜻
+
