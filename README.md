@@ -144,3 +144,9 @@
         - *.java 형태의 소스 파일을 컴파일러를 통해 *.class 형태의 가상의 기계어로 컴파일한 후 각 OS별 JVM을 통해 실행되는 방식이다.
         - 때문에 write once run anywhere! 이라는 사명으로 각 OS에 맞는 형태의 컴파일은 불필요하며 실행 시에 각 OS에 맞는 JVM을 통해 실행된다.
         
+
+
+
+
+
+get-filehash -algorithm sha512 'apache-tomcat-9.0.41.zip' -> sha512 hash code 뽑아내는 명령어
