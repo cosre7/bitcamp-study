@@ -26,14 +26,14 @@ public class Exam0300 {
   //- 컴파일러는 오버라이딩 규칙을 준수하는지 검사한다.
   //- 만약 오버라이딩 규칙을 따르지 않는다면 컴파일 오류를 발생시킬 것이다.
   //
-  @Override
-  public String toString() {
+  // @Override
+  public String toString2() {
     return "Exam12";
   }
 }
 
 //## 실습1 : 컴파일하기
-//- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/basic/ex02/Exam3.java
+//- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/lang/ex02/Exam3.java
 //- 오류없이 정상적으로 컴파일 된다.
 //
 //## 실습2 : @Override 애노테이션의 역할을 이해하기 I

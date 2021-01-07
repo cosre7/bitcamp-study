@@ -13,12 +13,15 @@ package com.eomcs.lang.ex02;
  * @author eomjinyoung
  *
  */
+
+ // 중간에 있는 *는 필요없다. 그냥 모양내기용
+ // /** */ 의 형태만 있으면 HTML을 만들 때 사용된다. -> 관리자가 사용하는 용으로 당분간 내가 사용할 일은 없을듯.
 public class Exam0200 {
   /**
    * 변수에 대한 설명
    * 변수 선언 앞에 설명을 붙여 놓으면 나중에 HTML 문서를 만들 때 추출할 수 있다.
    */
-  static String message = "Hello, world!";
+  public static String message = "Hello, world!";
   
   /**
    * 메서드에 대한 설명
@@ -38,8 +41,9 @@ public class Exam0200 {
 //       -charset [생성될 HTML 파일의 문자집합]
 //       -d [생성된 파일을 놓아둘 디렉토리] 
 //       -sourcepath [자바 소스 경로] [자바 패키지]
-//예) $ javadoc -encoding UTF-8 -charset UTF-8 -d javadoc -sourcepath src/main/java com.eomcs.basic.ex02
-//
+//예) $ javadoc -encoding UTF-8 -charset UTF-8 -d javadoc -sourcepath src/main/java com.eomcs.lang.ex02
+//    > javadoc -encoding utf8 -charset utf8 -d doc -sourcepath src/main/java com.eomcs.lang.ex02
 //2) Javadoc으로 생성한 HTML 문서 확인하기
 //- /javadoc 디렉토리를 보면 자바 소스 파일에서 추출한 Javadoc 으로 만든 HTML 문서를 확인할 수 있다.
-// 
+
+// index.html 실행해보기
