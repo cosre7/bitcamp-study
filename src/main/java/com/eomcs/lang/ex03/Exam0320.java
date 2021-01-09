@@ -1,7 +1,8 @@
 package com.eomcs.lang.ex03;
 
 //# 부동소수점 리터럴 - 메모리 크기에 따른 표기법
-
+//
+// 부동소수점의 경우 4바이트인 경우 접미사로 f를 붙이고 8바이트인 경우 접미사가 붙지 않는다.
 public class Exam0320 {
   public static void main(String[] args) {
 
