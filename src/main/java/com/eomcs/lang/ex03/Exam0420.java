@@ -4,7 +4,7 @@ package com.eomcs.lang.ex03;
 //- 자바는 문자를 다룰 때 2바이트 값으로 다룬다.
 //- 즉 각각의 문자는 규칙에 따라 0 ~ 65535까지의 값으로 메모리에 저장된다.
 //- 각 문자를 표현하기 위해 정의된 값을 '문자 코드(character code)'라 부른다.
-//- 각 문자에 부여된 문자 코드의 집합을 '문자 집합(chararacter set)'이라 부른다.
+//- 각 문자에 부여된 문자 코드의 집합을 '문자 집합(character set)'이라 부른다.
 //- 자바가 사용하는 문자 집합은 '유니코드(Unicode)'이다.
 //
 //## 유니코드
@@ -56,10 +56,10 @@ package com.eomcs.lang.ex03;
 
 public class Exam0420 {
   public static void main(String[] args) {
-    
+
     //## 문자 'A'의 문자 코드를 직접 사용하여 문자를 출력하기
     //유니코드 문자집합에서 문자 'A'의 문자 코드는 65 이다.
-    
+
     //println()에 숫자를 그냥 전달하면 일반 숫자인줄 알고 그대로 출력한다.
     System.out.println(65);
 
@@ -73,10 +73,10 @@ public class Exam0420 {
 
     //한글 '가'를 문자 코드를 이용하여 출력하기
     System.out.println((char)0xAC00);
-    
+
     //'가' 다음 문자 출력하기
     System.out.println((char)(0xAC00 + 1));
-    
+
     //영어 대문자 모두 출력하기
     //첫 번째 알파벳의 코드 값만 안다면 + 연산자를 이용하여 출력할 수 있다.
     for (int i = 0; i < 26; i++) {
