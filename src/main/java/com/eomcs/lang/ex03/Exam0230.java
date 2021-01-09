@@ -4,6 +4,7 @@ package com.eomcs.lang.ex03;
 //- 정수를 저장할 메모리의 크기를 지정할 수 있다.
 //- 메모리의 크기에 따라 표현할 수 있는 정수의 크기가 다르다.
 //
+// 정수의 경우 4바이트일 때 접미사가 붙지 않고 8바이트의 경우 접미사 L이 붙는다.
 public class Exam0230 {
   public static void main(String[] args) {
     //## 4바이트 정수
