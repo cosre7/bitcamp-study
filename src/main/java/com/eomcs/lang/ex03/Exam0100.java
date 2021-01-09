@@ -24,8 +24,10 @@ public class Exam0100 {
 
     System.out.println("-------- 문자 리터럴");
     System.out.println('가');
+    // 문자 하나를 사용하는 리터럴의 경우 작은 따옴표(' ')를 사용한다.
 
     System.out.println("-------- 문자열 리터럴");
     System.out.println("오호라 코딩스쿨!");
+    // 문자 여러개를 뜻하는 문자열의 리터럴의 경우 큰 따옴표(" ")를 사용한다.
   }
 }
