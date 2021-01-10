@@ -13,6 +13,8 @@ public class Exam0340 {
     /*    
     //## 4byte(float) 부동소수점의 유효자릿수
     //소수점을 뺀 후 7자리 숫자까지는 거의 정상적으로 저장된다.
+     *  "거의 정상적"이라는 말에 주목해야 한다. 
+     *  7자리 숫자 이하라도 수에 따라서 값이 변형되는 경우가 있다.
     System.out.println(999.9999f);
     System.out.println(999999.9f);
     System.out.println(9.999999f);
