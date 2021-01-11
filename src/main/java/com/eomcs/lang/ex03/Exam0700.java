@@ -18,15 +18,15 @@ public class Exam0700 {
     System.out.println("Hello,\nworld!"); // 줄바꿈 문자
     System.out.println("Hello,\rabc"); // 커서(cursor)를 처음으로 돌리는 문자
     // 커서란? 문자를 출력할 위치를 가리키는 것.
-
+    // Hello, 찍은 후 커서 처음으로 -> abclo,
     System.out.println("Hello,\b\b\bworld!"); // 커서를 뒤로 한 칸 이동시키는 문자
     System.out.println("Hello,\tworld!"); // 탭 공간을 추가시키는 문자
-    System.out.println("Hello,\fworld!"); // 
-    System.out.println("Hello,\"w\"orld!"); // " 문자를 출력시키는 문자
+    System.out.println("Hello,\fworld!"); // 윈도우에서 실행 불가
+    System.out.println("Hello,\"w\"orld!"); // " 문자를 문자 취급하고 싶을 때 "를 출력시키는 문자
     System.out.println("Hello,'w'orld!"); //"" 안에서 ' 문자는 그냥 적는다.
-    System.out.println('\''); // ' 문자를 출력시키는 문자
+    System.out.println('\''); // ' 문자를 문자취급해서 출력시키는 문자
     System.out.println('"'); // '' 안에서 " 문자는 그냥 적는다.
-    System.out.println("c:\\Users\\user\\git"); // \ 문자를 출력시키는 문자
+    System.out.println("c:\\Users\\user\\git"); // \ 문자를 문자취급해서 출력시키는 문자
   }
 }
 
