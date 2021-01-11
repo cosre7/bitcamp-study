@@ -12,6 +12,9 @@ package com.eomcs.lang.ex04;
 public class Exam0520 {
   public static void main(String[] args) {
     int[] arr1 = new int[5];
+    int[] arr3 = new int[2147483647];
+    long[] arr4 = new long[2147483647];
+    // long의 경우에도 배열의 최대 크기는 2147483647개이다.
 
     // 배열 메모리에 접근
     arr1[0] = 100;
