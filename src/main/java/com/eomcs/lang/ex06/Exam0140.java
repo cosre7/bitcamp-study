@@ -15,6 +15,7 @@ public class Exam0140 {
       System.out.println("성인입니다.");
     else
       System.out.println("미성년입니다.");
+    // 위의 if - else 문은 각각 한줄씩의 실행문이 있기 때문에 중괄호를 포함하지 않아도 된다.
 
     // 여러 문장을 실행할 때 블록으로 묶어야 한다.
     if (age >= 20) {
