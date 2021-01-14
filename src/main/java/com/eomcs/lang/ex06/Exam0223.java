@@ -24,5 +24,7 @@ public class Exam0223 {
       default:
         System.out.println("F");
     }
+    // score가 정확하게 100 90 80 70 60 50 40 이 아니면 모두 F로 표시
+    // 성적 표시할 때에는 switch 보다 if 문이 더 좋을 것으로 생각된다.
   }
 }
