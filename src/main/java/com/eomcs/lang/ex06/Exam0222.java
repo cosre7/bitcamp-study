@@ -28,6 +28,10 @@ public class Exam0222 {
       default:
         System.out.println("올바른 번호를 입력하세요!");
     }
+    // 1을 선택할 경우 System.out.println("정보처리자격증"); 부터 break 까지 모두 실행
+    // 2를 선택할 경우 System.out.println("졸업증명서"); 부터 break 까지 모두 실행
+    // 3을 선택할 경우 System.out.println("이력서"); 실행
+
     keyScan.close();
   }
 }
