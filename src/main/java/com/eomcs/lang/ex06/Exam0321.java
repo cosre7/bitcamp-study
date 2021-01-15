@@ -17,6 +17,9 @@ public class Exam0321 {
       if (count % 2 == 0) {
         sum += count;
       }
+      // if ((count $ 0x01) == 0) {
+      // sum += count;
+      // } 와 같음
     }
     System.out.printf("count=%d, sum=%d\n", count, sum);
 

@@ -1,7 +1,7 @@
 package com.eomcs.lang.ex06;
 
 //# 흐름 제어문 - do ~ while 반복문
-//
+// 먼저 실행하고 조건문
 public class Exam0340 {
   public static void main(String[] args) {
     int i = 0;

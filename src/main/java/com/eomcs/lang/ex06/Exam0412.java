@@ -14,5 +14,8 @@ public class Exam0412 {
       i++;
     }
 
+    // 변수 선언을 for 문 밖에서 할 경우
+    // for 문을 종료한 후에도 i 변수를 사용할 수 있다.
+    System.out.println(i);
   }
 }

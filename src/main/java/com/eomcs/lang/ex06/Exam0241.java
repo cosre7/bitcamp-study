@@ -11,6 +11,8 @@ public class Exam0241 {
     // => case 문자의 값으로 변수를 사용할 수 없다.
     // => 단 값이 변경되지 않는 final 변수라면 사용할 수 있다.
     //
+    // 일반적인 int 변수였다면 case 문자의 값으로 들어갈 수 없지만
+    // final int 값인 상수는 들어갈 수 있다.
     final int GUEST = 0, MEMBER = 1, ADMIN = 2;
 
     switch (level) {
