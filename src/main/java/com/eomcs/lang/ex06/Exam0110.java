@@ -6,7 +6,7 @@ public class Exam0110 {
   public static void main(String[] args) {
     int age = 17;
 
-    // => if (조건) 문장;
+    // => if (조건) 문장; -> 조건에는 무조건 true/false 결과가 나와야 한다.
     if (age >= 19) System.out.println("성인이다.");
     // if 조건을 설정하고 싶은 문장이 하나일 경우 { } 중괄호는 필요없다.
 

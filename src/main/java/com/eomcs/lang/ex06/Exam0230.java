@@ -45,6 +45,7 @@ public class Exam0230 {
       case "hello":
       case "ohora":
       case "hul":
+        //      case str: -> 불가능
       default:
     }
 
