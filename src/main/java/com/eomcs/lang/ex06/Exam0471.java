@@ -21,6 +21,9 @@ public class Exam0471 {
     for (String name : list) {
       System.out.print(name + " ");
     }
+
+    // String 이라고 지정하면 for 문 안에도 String이라고 하고
+    // 지정된 것이 없으면 for 문 안에 Object 를 사용한다.
   }
 }
 

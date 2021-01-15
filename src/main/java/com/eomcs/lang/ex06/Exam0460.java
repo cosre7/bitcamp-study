@@ -19,6 +19,9 @@ public class Exam0460 {
 
     for (int i = 0; i < list.size(); i++)
       System.out.println(list.get(i));
+
+    // list.size -> list의 크기
+    // 추가할 때 add 꺼낼 때 get
   }
 }
 

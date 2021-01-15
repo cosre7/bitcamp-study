@@ -15,6 +15,6 @@ public class Exam0440 {
 
     for (int i = 0; i < names.length; i++)
       System.out.println(names[i]);
-
+    // names.length -> names 배열의 개수
   }
 }

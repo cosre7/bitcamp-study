@@ -16,6 +16,8 @@ public class Exam0461 {
     // for (변수 선언 : 컬렉션객체) 문장;
     for (Object value : list)
       System.out.println(value);
+
+    // :list 를 쓰고 싶으면 Object value 를 사용해야 한다.
   }
 }
 
