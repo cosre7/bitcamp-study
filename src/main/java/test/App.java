@@ -1,19 +1,19 @@
 package test;
 
-import java.util.Scanner;
-
 public class App {
 
   public static void main(String[] args) {
-    Scanner keyboardScan = new Scanner(System.in);
+    // 회원정보를 저장할 변수 선언
+    String name;
+    int age;
+    boolean working;
 
-    String name = null;
+    name = "홍길동";
+    age = 20;
+    working = false;
 
-    System.out.print("이름? ");
-    name = keyboardScan.nextLine();
-
-    keyboardScan.close();
-
-    System.out.printf("%s님 반갑습니다!\n", name);
+    System.out.printf("이름: %s\n", name);
+    System.out.printf("나이: %d\n", age);
+    System.out.printf("재직여부: %b\n", working);
   }
 }
