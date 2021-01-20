@@ -35,9 +35,6 @@ package com.eomcs.lang.ex07;
 // }
 //
 public class Exam0210 {
-
-
-
   // 
   // 예1) 메서드 : 리턴값(X), 파라미터(X)
   // - 함수 블록을 실행할 때 특정 값을 함수에 넘겨 줄 필요가 없고,

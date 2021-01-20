@@ -8,6 +8,7 @@ public class Exam0240 {
   // => "이 돈 갖고 과자좀 사와!"
   static String hello(String name, int age) {
     String retVal = String.format("%d살 %s님을 환영합니다!", age, name);
+    // 완성된 문자열을 담고있는 기능
     return retVal;
   }
 

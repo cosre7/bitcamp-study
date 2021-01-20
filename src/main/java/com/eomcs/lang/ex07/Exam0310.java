@@ -1,10 +1,12 @@
 package com.eomcs.lang.ex07;
 
 //# 메서드 : call by value
-//
+// 메서드를 호출할 때 변수를 넘기는게 아니라 변수에 들어있는 값을 넘긴다
 public class Exam0310 {
 
   static void swap(int a, int b) {
+    // int a, int b는 로컬변수(local variables)
+    // static void swap 안에서만 변수로 작용.
     System.out.printf("swap(): a=%d, b=%d\n", a, b);
     int temp = a;
     a = b;
