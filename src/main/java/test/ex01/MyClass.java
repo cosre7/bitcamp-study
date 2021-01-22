@@ -9,7 +9,7 @@ public class MyClass {
   // - new 명령을 실행할 때 이 명령은 수행된다.
   int b = 10;
 
-  public static void main(String[] args) {
+  static void m() {
     // 로컬 변수
     // - 메서드가 호출될 때 이 명령은 실행된다.
     int c = 100;
