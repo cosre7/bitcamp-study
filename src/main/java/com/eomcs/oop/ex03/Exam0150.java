@@ -27,7 +27,7 @@ public class Exam0150 {
     s1.age = 10;
     
     // 클래스 이름으로는 인스턴스 필드에 접근할 수 없다.
-    // A.name = "홍길동"; // 컴파일 오류!
+    // Student.name = "홍길동"; // 컴파일 오류!
     
     Student.count++;
 
