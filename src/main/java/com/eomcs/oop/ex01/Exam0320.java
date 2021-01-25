@@ -17,7 +17,7 @@ public class Exam0320 {
     Score s1;
 
     // 인스턴스를 만들어 그 주소를 레퍼런스에 저장한다.
-    s1 = new Score();
+    s1 = new Score(); // -> 이 때 만들어진 인스턴스가 가비지가 된다.
 
     // 새 인스턴스를 만들어 s1에 주소를 저장한다.
     s1 = new Score();

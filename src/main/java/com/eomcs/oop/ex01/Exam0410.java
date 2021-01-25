@@ -7,7 +7,8 @@ public class Exam0410 {
 
     // 바깥 쪽에 별도 선언한 클래스를 사용하기
     Score s = new Score();
-
+    // Score 클래스는 현재 이 클래스에 존재하지 않는다.
+    // -> 위치를 알려주어야 한다. (import 혹은 위치 적어주기)
     s.name = "홍길동";
     s.kor = 100;
     s.eng = 90;

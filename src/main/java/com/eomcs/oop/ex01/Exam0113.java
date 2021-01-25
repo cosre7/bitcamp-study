@@ -15,7 +15,7 @@ public class Exam0113 {
     int sum;
     float aver;
   }
-  // Score 메서드가 main 메서드 안에 있으면 printScore 에서 사용 불가능하다.
+  // Score 메서드가 main 메서드 안에 있으면 printScore 메서드에서 사용 불가능하다.
 
   public static void main(String[] args) {
 
