@@ -11,7 +11,11 @@ public class Exam0620 {
     // 총점: 290
     // 평균: 96.9
     //
+
+    // 여기서 name : 키, 100 : value 라고 부른다.
+
     String name = System.getProperty("name");
+    // getProperty는 static 메소드이다 -> 파라미터 값을 가지고 사용
     String s1 = System.getProperty("kor");
     String s2 = System.getProperty("eng");
     String s3 = System.getProperty("math");

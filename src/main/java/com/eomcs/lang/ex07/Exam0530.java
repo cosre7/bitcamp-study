@@ -11,6 +11,8 @@ public class Exam0530 {
     int sum = 0;
     for (String arg : args)
       sum += Integer.parseInt(arg);
+    // sum += Integer.valueOf(arg); 도 가능
+    // 이클립스에서 실행하지 말고 명령 프롬프트에서 실행하기
     System.out.printf("합계: %d\n", sum);
   }
 }

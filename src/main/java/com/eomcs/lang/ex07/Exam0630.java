@@ -11,9 +11,13 @@ public class Exam0630 {
     java.util.Properties props = System.getProperties();
 
     java.util.Set keySet = props.keySet();
+    // set : 목록을 담고 있는 바구니
+    //       문자열이 들어간다.
 
     for (Object key : keySet) {
       String value = System.getProperty((String) key);
+      // 하지만 String 이라고 한번 더 알려줘야 한다.
+      // (String) key
       System.out.printf("%s = %s\n", key, value);
     }
   }

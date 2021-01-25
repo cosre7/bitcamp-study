@@ -5,6 +5,7 @@ package com.eomcs.lang.ex07;
 public class Exam0610 {
 
   public static void main(String[] 변수명은상관없다) {
+    // String은 고정 변수명은 노상관
     // JVM 아규먼트?
     // - JVM에게 전달하는 값
     // - 형식

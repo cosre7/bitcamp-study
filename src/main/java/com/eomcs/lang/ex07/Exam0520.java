@@ -9,7 +9,10 @@ public class Exam0520 {
   // - 예)
   // > java -cp bin Exam0520 aaa bbb cccc
   // aaa bbb cccc 가 프로그램 아규먼트이다.
-  //
+  // 무조건 문자열로 저장된다.
+  // 숫자를 입력해도 문자열로 저장된다.
+
+  // cmd에서 java -cp bin/main com.eomcs.lang.ex07.Exam520 aaa 등으로 실행해본다.
   public static void main(String[] args) {
     // 프로그램 아규먼트는 스트링 배열에 담겨서 main()를 호출할 때
     // 넘어온다.

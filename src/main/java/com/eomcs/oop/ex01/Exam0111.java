@@ -10,6 +10,7 @@ public class Exam0111 {
     int math;
     int sum;
     float aver;
+    //main 메소드에서 int sum과 float aver는 사용하지 않는다.
 
     name = "홍길동";
     kor = 100;
