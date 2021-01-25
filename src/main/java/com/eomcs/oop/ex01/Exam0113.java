@@ -15,6 +15,7 @@ public class Exam0113 {
     int sum;
     float aver;
   }
+  // Score 메서드가 main 메서드 안에 있으면 printScore 에서 사용 불가능하다.
 
   public static void main(String[] args) {
 
@@ -24,6 +25,7 @@ public class Exam0113 {
     s.kor = 100;
     s.eng = 90;
     s.math = 80;
+    // s 객체에 name 필드
 
     // 성적 데이터를 클래스로 묶어 놓으면 값을 다루기가 편하다.
     // => 다음과 같이 성적 데이터를 한 번에 넘길 수 있다.

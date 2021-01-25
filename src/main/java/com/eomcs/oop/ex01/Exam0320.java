@@ -27,7 +27,7 @@ public class Exam0320 {
     // "가비지(garbage)"라 부른다.
 
     // 가비지는 가비지 컬렉터에 의해 메모리에서 해제된다.
-    // 가비지 컬렉터(garbage collector)의 실행
+    // 가비지 컬렉터(garbage collector)의 실행 (가비지 제거하기)
     // - 메모리 부족할 때
     // - CPU가 한가할 때
     // - System.gc()를 호출하여 가비지 실행을 요청할 때

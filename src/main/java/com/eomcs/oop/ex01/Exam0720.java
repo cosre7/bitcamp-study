@@ -17,6 +17,8 @@ public class Exam0720 {
     // 문법:
     //      import 패키지명.클래스명;
     //
+
+    //import는 클래스를 로딩하는 것이 아니라 그냥 컴파일러에게 알려주는 것이다.
     Y2 obj;
     obj = new Y2();
   }

@@ -7,14 +7,14 @@ package com.eomcs.oop.ex01;
 // - 단독으로 선언하는 클래스이다.
 // - "패키지 멤버 클래스"라 부른다.
 // - 물론 이 예제처럼 한 파일에 여러 개의 클래스를 선언할 수 있지만,
-//   보통은 한 파일에 한 클래스를 선얺나다.
+//   보통은 한 파일에 한 클래스를 선언한다.
 // - 패키지 멤버 클래스는 접근 권한이 있다면 누구든 사용할 수 있다.
 //
 // bin/main/com/eomcs/oop/ex01/A.class
-class A {}
+class A {} //패키지 멤버
 
 // => bin/main/com/eomcs/oop/ex01/Exam0420.class
-public class Exam0510 {
+public class Exam0510 { //패키지 멤버
 
   // 중첩 클래스(nested class)
   // - 다른 클래스 안에 정의된 클래스
