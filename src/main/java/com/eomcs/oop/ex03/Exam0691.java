@@ -25,6 +25,21 @@ public class Exam0691 {
     System.out.println(A.a); // ?
     System.out.println(B.b); // ?
 
+    // 출력
+    // A.static{}
+    // B.static{}
+    // 36
+    // 29
+    //    만약 
+    //    System.out.println(A.a); // ?
+    //    System.out.println(B.b); // ?
+    //    형태로 만들어져 있다면 출력은 
+    //    B.static{}
+    //    A.static {}
+    //    51
+    //    29 
+    //    로 된다.
+
     // 클래스 로딩 절차
     // 1) 클래스를 Method Area에 로딩한다.
     // 2) 스태틱 변수를 만든다.
