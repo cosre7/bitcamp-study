@@ -9,9 +9,14 @@ class X {
     System.out.println("X()");
   }
 
-  static X create() {
-    return new X();
-  }
+  //  static X r;
+  //
+  //  static X create() {
+  //    if (r == null) {
+  //      r = new X();
+  //    }
+  //    return r;
+  //  } // 추후에 배울 내용 design-pattern - 싱글톤
 }
 
 public class Exam0450 {
@@ -22,7 +27,12 @@ public class Exam0450 {
     // 따라서 new 명령으로 객체를 생성할 수 없도록 만든다.
     //obj1 = new X(); // 컴파일 오류!
 
-    obj1= X.create();
+    //    obj1= X.create();
+    //    X obj2= X.create();
+    //    X obj3= X.create();
+    //
+    //
+    //    System.out.println(obj1 == obj2);
   }
 }
 

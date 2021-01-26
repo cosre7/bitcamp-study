@@ -23,7 +23,8 @@ public class Exam0640 {
 
   public static void main(String[] args) throws Exception {
 
-    // 클래스가 로딩되는 경우,
+    // 클래스가 로딩되는 경우, (클래스는 단 한번만 로딩)
+    // -> new A();가 여러개 있어도 딱 한번
     // 3) 해당 클래스의 인스턴스를 최소로 생성할 때
     // - 인스턴스를 만들려면 설계도가 있어야 하고,
     // - 설계도는 메모리에 로딩되어 있어야 한다.

@@ -29,7 +29,8 @@ public class Exam0650 {
     // - 메모리 절약을 위해, 자바는 중복해서 클래스를 메모리에 로딩하지 않는다.
     //
     Class.forName("com.eomcs.oop.ex03.Exam0650$A");
-
+    // Class.forName 강제로 클래스 로딩하는 도구
+    // 파일명은 $A 형태로 된다는 것 기억
     System.out.println("종료!");
   }
 }
