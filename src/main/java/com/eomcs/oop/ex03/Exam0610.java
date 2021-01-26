@@ -29,6 +29,10 @@ public class Exam0610 {
     A obj1;
     A obj2;
 
+    // 클래스를 로딩하고 싶다면
+    // A obj1 = new A(); 의 형태로 인스턴스를 생성하면 된다
+    // Exam640
+
     System.out.println("종료!");
   }
 }
