@@ -28,7 +28,7 @@ public class Exam0850 {
       System.out.println("초기화 블록 실행");
     }
 
-    // 필드 초기화 문장(variable initializer)
+    // 필드(변수) 초기화 문장(variable initializer)
     int a = 100;
   }
 
