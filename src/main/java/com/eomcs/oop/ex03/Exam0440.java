@@ -22,6 +22,10 @@ public class Exam0440 {
       // 다른 생성자를 호출할 때는 this()를 사용한다.
       // 단, 생성자의 첫 문장으로 와야 한다.
       this(name, 0, 0, 0); // Score(String, int, int, int) 생성자 호출
+      // Score(String, int, int, int) 생성자의 내용에 name 값만 줘놓고 나머지를 0으로 초기화
+      // 그렇게 되면 굳이 this.name = name; this.kor = 0; 등을 중복시킬 필요가 없다.
+      // => 코드의 반복을 줄인다.
+
       System.out.println("Score(String)");
     }
 

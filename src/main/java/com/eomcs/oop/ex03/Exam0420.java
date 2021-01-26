@@ -11,7 +11,7 @@ public class Exam0420 {
     int sum;
     float average;
 
-    // 생성자가 한 개라도 있으면 컴파일러는 기본 생성자를 만들어주지 않는다.
+    // 생성자가 한 개라도 있으면 컴파일러는 기본 생성자를 자동으로 만들어주지 않는다.
     Score(String name, int kor, int eng, int math) {
       System.out.println("Score(String,int,int,int) 호출!");
 
@@ -24,7 +24,6 @@ public class Exam0420 {
       this.compute();
     }
 
-
     public void compute() {
       this.sum = this.kor + this.eng + this.math;
       this.average = this.sum / 3f;
@@ -32,7 +31,7 @@ public class Exam0420 {
   }
 
   public static void main(String[] args) {
-    // Score 클래스에는 기본 생성자가 없기 때문에
+    // Score 클래스에는 기본 생성자가 없기 때문에 기본 생성자를 호출하는
     // 다음 문장은 컴파일 오류이다!
     //Score s0 = new Score();
 
