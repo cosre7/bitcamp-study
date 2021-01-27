@@ -5,7 +5,7 @@ public class Exam0111 {
 
   public static void main(String[] args) throws Exception {
     // 생성자를 호출하여 문자열 인스턴스를 초기화시킨다.
-    
+
     // => 문자열 리터럴을 사용하여 String 인스턴스를 초기화시키기.
     String s1 = new String("Hello");
 
@@ -22,6 +22,9 @@ public class Exam0111 {
         (byte)0x6f  // o 
     };
     String s3 = new String(bytes);
+    // 네트워크에서 문자열을 받을 때 이 방법을 사용한다.
+    // 네트워크 통신에서는 byte 배열로 문자를 이동시킨다
+    // ex) 카카오톡의 이모티콘, 채팅 등등 모두 바이트 배열이다
 
     System.out.printf("%s, %s, %s\n", s1, s2, s3);
   }

@@ -10,7 +10,7 @@ public class Exam0130 {
     // 생성자를 호출할 수 없다.
     // 이런 경우 new 명령으로 인스턴스를 생성할 수 없다.
     //Calendar c = new Calendar(); // 컴파일 오류!
-    
+
     // Calendar 클래스의 경우도 생성자를 protected 로 막고 있다.
     // 즉 new 명령을 통해 바로 인스턴스를 생성할 수 없다.
     // 대신 클래스 메서드를 통해 생성하도록 유도하고 있다.
@@ -18,7 +18,26 @@ public class Exam0130 {
     Calendar c1 = Calendar.getInstance();
     Calendar c2 = Calendar.getInstance();
     System.out.println(c1 == c2);
+
+    final int DAY_OF_MONTH = 5;
+    System.out.println(c1.get(DAY_OF_MONTH));
+    System.out.println(c1.get(5));
+
+    // 5는 며칠인지
+    // 14는 밀리초라는 뜻
+    // calendar ctrl+클릭
+    // 나중에 되면 5가 무엇인지 모르는 상황 발생
+    // DAY_OF_MONTH 등으로 표시해주면 좋다
+    // calendar에 class 변수 형태로 정해져있다 -> 꺼내서 확인하는 용도
+    // => 변하지 않는다 -> final 
+    // 공개되야 한다 -> public
+    System.out.println(c1.get(Calendar.DAY_OF_MONTH));
+    // 이걸 확실히 하기 위해서 실무에서는 위의 코드 형태로 적는다.
+
+    System.out.println(c1.get(Calendar.MILLISECOND));
+    System.out.println(c2.get(Calendar.MILLISECOND));
     // getInstance() 호출 시점의 시각이 다르기 때문에 두 객체의 주소는 다르다.
+    // 두 코드의 초는 다르다.
 
     // 이렇게 자바에서 생성자의 사용 권한을 막고 메서드를 호출하여
     // 객체를 생성하도록 유도하는 경우는 다음과 같다.

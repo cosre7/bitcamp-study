@@ -28,6 +28,9 @@ public class Exam0430 {
       this.math = math;
       this.compute();
     }
+    Score(boolean b) {
+
+    }
 
     public void compute() {
       this.sum = this.kor + this.eng + this.math;
@@ -47,7 +50,7 @@ public class Exam0430 {
     Score s2 = new Score("유관순");
     Score s3 = new Score("홍길동", 100, 90, 77);
     //Score s4 = new Score(true); // 논리 값을 받는 생성자는 없다!
-
+    Score s4 = new Score(true);
     System.out.printf("%s, %d, %d, %d, %d, %.1f\n",
         s1.name, s1.kor, s1.eng, s1.math, s1.sum, s1.average);
 
@@ -56,6 +59,7 @@ public class Exam0430 {
 
     System.out.printf("%s, %d, %d, %d, %d, %.1f\n",
         s3.name, s3.kor, s3.eng, s3.math, s3.sum, s3.average);
+    System.out.println(s4);
   }
 }
 
