@@ -1,7 +1,8 @@
-package test.util;
+package test.util2;
+
+import test.util.Calculator;
 
 public class Calculator2 extends Calculator {
-
   public void minus(int value) {
     this.result -= value;
     // result를 private 해뒀던 것을 (default)로 만들면 

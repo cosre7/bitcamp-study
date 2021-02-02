@@ -1,6 +1,6 @@
 package test;
 
-import test.util.Calculator2;
+import test.util2.Calculator2;
 
 public class Test1 {
   public static void main(String[] args) {
