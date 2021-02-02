@@ -1,8 +1,9 @@
 package test.util;
 
 public class Calculator {
-  private int result;
+  int result;
   // private 내부에서만 접근 가능하도록 접근제어
+  // (default)로 해두어야 같은 패키지의 클래스에서 사용 가능
 
   public void plus(int value) {
     this.result += value;

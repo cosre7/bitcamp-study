@@ -1,18 +1,10 @@
 package test.util;
 
 public class Calculator2 extends Calculator {
-  // 기존의 Calculator 설계도에 2 덧붙인다.
-  //private int result; // Calculator와 중복
-
-  //  public void plus(int value) {
-  //    this.result += value; // Calculator와 중복
-  //  }
 
   public void minus(int value) {
     this.result -= value;
+    // result를 private 해뒀던 것을 (default)로 만들면 
+    // 이 클래스에서도 result를 사용할 수 있다.
   }
-
-  //  public int getResult() {
-  //    return this.result; // Calculator와 중복
-  //  }
-  //}
+}
