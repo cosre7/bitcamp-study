@@ -13,6 +13,6 @@ public class Test1 {
     s.tel = "010-2222-3333";
     s.school = "비트대학교";
     s.major = "컴퓨터공학";
-    s.print2();
+    s.print();
   }
 }
