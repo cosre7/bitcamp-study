@@ -1,15 +1,18 @@
 package test;
 
-import test.util2.Calculator2;
-
 public class Test1 {
   public static void main(String[] args) {
-    Calculator2 c = new Calculator2(); 
-    c.plus(100);
-    c.plus(100, 200);
-    c.minus(20); 
-    c.minus(30, 40);
-    //    c.plus(3.14f); //float 타입은 정의하지 않았으므로 에러!
-    System.out.println(c.getResult());
+    Member m = new Member();
+    m.name = "홍길동";
+    m.tel = "010-1111-2222";
+    m.print();
+    System.out.println("---------------------------");
+
+    Student s = new Student();
+    s.name = "임꺽정";
+    s.tel = "010-2222-3333";
+    s.school = "비트대학교";
+    s.major = "컴퓨터공학";
+    s.print2();
   }
 }
