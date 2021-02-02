@@ -8,6 +8,12 @@ public class Calculator2 extends Calculator {
     this.result -= value;
   }
 
+  // public void minus(int a) {
+  // this.result -= value;
+  // }
+  // 변수명만 다른 것은 불가능!
+  // 파라미터에 int를 넣었을 때 위의 것인지 아래의 것인지 구별이 불가능!
+
   public void minus(int value1, int value2) {
     this.result -= value1;
     this.result -= value2;
