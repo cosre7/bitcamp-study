@@ -21,7 +21,7 @@ public class Exam0123 {
     }
 
     // Object로부터 상속 받은 toString()의 리턴 값이 마음에 들지 않는다면 
-    // 재정의하라!
+    // 재정의하라! ==> 오버라이딩
     // => 보통 인스턴스의 내부 데이터를 문자열로 리턴하도록 변경한다.
     // => 프로그램을 실행하는 중에 인스턴스의 내부 값을 빠르게 확인하고 싶을 때 
     //    개발자들이 종종 이 메서드를 오버라이딩 한다.
@@ -32,16 +32,18 @@ public class Exam0123 {
           this.name, this.kor, this.eng, this.math, 
           this.sum, this.aver);
     }
+    // static 메서드 -> 인스턴스변수 사용X
+    // 파라미터만 받는다.
   }
 
   public static void main(String[] args) {
-    
+
     Score s1 = new Score("홍길동", 100, 100, 100);
-    
+
     String str = s1.toString();
     // Score 클래스에서 Object의 toString()을 오버라이딩 했기 때문에,
     // Score의 toString()을 호출한다.
-    
+
     System.out.println(str);
 
     // println()에 String이 아닌 객체를 넘기면,

@@ -18,14 +18,17 @@ public class Exam0133 {
     public boolean equals(Object obj) {
       if (!(obj.getClass() == Member.class))
         return false;
-      
+
+      // getClass -> 리턴값은 class 정보
       Member other = (Member) obj;
 
       if (!this.name.equals(other.name))
         return false;
+      // 문자비교
 
       if (this.age != other.age)
         return false;
+      // 숫자비교
 
       return true;
     }

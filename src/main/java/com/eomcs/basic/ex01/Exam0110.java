@@ -20,7 +20,10 @@ public class Exam0110 /*extends Object*/ {
     // My 클래스가 Object 크래스의 서브 클래스임을 증명하는 것이다.
     
     System.out.println(obj instanceof My);
+    // My가 obj가 맞냐?
+    // = 티코가 자동차가 맞냐?
     System.out.println(obj instanceof String);
+    // = 소나타가 자동차가 맞냐?
     System.out.println(obj instanceof Object);
     
     // Object를 조상으로 갖는다면 당연히 Object의 메서드를 사용할 수 있을 것이다.

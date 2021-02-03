@@ -51,6 +51,8 @@ public class Exam0132 {
     // => String 클래스처럼 equals()을 오버라이딩 하라!
     // => Exam0320.java를 보라!
 
+    // equals는 원래 주소 비교
+    // equals 했는데 내용을비교했다? -> 오버라이딩 한 것이다.
   }
 }
 

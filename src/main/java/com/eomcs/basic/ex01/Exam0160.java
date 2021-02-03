@@ -2,16 +2,18 @@
 package com.eomcs.basic.ex01;
 
 public class Exam0160 {
-  
+
   static class My {
   }
-  
+
   public static void main(String[] args) {
     My obj1 = new My();
-    
+
     // 레퍼런스를 통해서 인스턴스의 클래스 정보를 알아낼 수 있다.
-    Class<?> classInfo = obj1.getClass();
-    
+    //    Class<?> classInfo = obj1.getClass(); <- 나중에 배울 내용
+    Class classInfo = obj1.getClass();
+    // c 아니고 Class -> class 정보를 담는 데이터 타입
+
     // 클래스 정보로부터 다양한 값을 꺼낼 수 있다. 
     System.out.println(classInfo.getName());
     System.out.println(classInfo.getSimpleName());
