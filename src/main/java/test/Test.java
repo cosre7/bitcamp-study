@@ -6,10 +6,39 @@ public class Test {
     String name;
     int age;
 
-    @Override
+    // 상속 받은 메서드를 서브 클래스의 역할에 맞게 재정의하자
+    // - 이것을 오버라이딩(overriding) 이라 부른다.
+    // 
+    // 상속 받은 메서드?
+    // - 서브 클래스에서 호출할 수 있도록 권한을 획득한 수퍼 클래스의 메서드를 말한다.
+    // - 수퍼 클래스의 메서드를 복사해서 서브 클래스에 가져왔다는 뜻이 아니다.
+    // 
+    // 오버라이딩 문법
+    // -수퍼 클래스의 메서드와 똑같은 시그너처를 가져야 한다.
+    // 
+
+    @Override // 컴파일러에게 이것이 오버라이드인지 확인해달라는 신호
     public boolean equals(Object obj) {
-      // TODO Auto-generated method stub
-      return super.equals(obj);
+      if (!(obj instanceof Member)) 
+        return false;
+
+      Member m = (Member) obj;
+
+      if (this.no != m.no)
+        return false;
+
+      if (!this.name.equals(m.name))
+        return false;
+
+      if (this.age != m.age)
+        return false;
+
+      return true;
+    }
+    @Override
+    public int hashCode() {
+      String str = this.no + "," + this.name + "," + this.age;
+      return str.hashCode();
     }
   }
 
