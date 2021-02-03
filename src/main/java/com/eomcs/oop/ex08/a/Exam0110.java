@@ -16,7 +16,7 @@ class Score {
 }
 
 public class Exam0110 {
-  public static void main(String[] args) {
+  public static void main(String[] args) {  
 
     // 1) 개발자가 새로 정의한 데이터 타입에 따라 변수를 준비한다.
     Score s1 = new Score();
