@@ -1,67 +1,40 @@
 package test;
 
 public class Test {
-  static class Member {
-    int no;
-    String name;
-    int age;
-
-    // 상속 받은 메서드를 서브 클래스의 역할에 맞게 재정의하자
-    // - 이것을 오버라이딩(overriding) 이라 부른다.
-    // 
-    // 상속 받은 메서드?
-    // - 서브 클래스에서 호출할 수 있도록 권한을 획득한 수퍼 클래스의 메서드를 말한다.
-    // - 수퍼 클래스의 메서드를 복사해서 서브 클래스에 가져왔다는 뜻이 아니다.
-    // 
-    // 오버라이딩 문법
-    // -수퍼 클래스의 메서드와 똑같은 시그너처를 가져야 한다.
-    // 
-
-    @Override // 컴파일러에게 이것이 오버라이드인지 확인해달라는 신호
-    public boolean equals(Object obj) {
-      if (!(obj instanceof Member)) 
-        return false;
-
-      Member m = (Member) obj;
-
-      if (this.no != m.no)
-        return false;
-
-      if (!this.name.equals(m.name))
-        return false;
-
-      if (this.age != m.age)
-        return false;
-
-      return true;
+  static class A {
+    int a = 100;
+    int b = 200;
+    void m1() {
+      System.out.println("A.m1()");
     }
+
+    void m2() {
+      System.out.println("A.m2()");
+    }
+    void print() {
+      System.out.printf("%d, %d\n", a, b);
+    }
+  }
+
+  static class B extends A {
+    int a = 111;
+    int c = 222;
     @Override
-    public int hashCode() {
-      String str = this.no + "," + this.name + "," + this.age;
-      return str.hashCode();
+    void m1() {
+      System.out.println("B.m1()");
+    }
+
+    void m3() {
+      System.out.println("B.m3()");
     }
   }
 
   public static void main(String[] args) {
+    A obj = new B();
+    obj.m1();
+    obj.m2();
+    // obj.m3(); // 컴파일러는 문법 그대로 검사한다. 
+    // obj는 어떤 객체 주소가 들어있는지 고려하지 않는다. 
 
-    Member obj = new Member();
-    obj.no = 1;
-    obj.name = "홍길동";
-    obj.age = 20;
-
-    Member obj2 = new Member();
-    obj2.no = 1;
-    obj2.name = "홍길동";
-    obj2.age = 20;
-
-    System.out.println(obj.toString());
-    System.out.println(obj2.toString());
-
-    System.out.println(Integer.toHexString(obj.hashCode()));
-    System.out.println(Integer.toHexString(obj2.hashCode()));
-
-    System.out.println(obj == obj2); //1
-    System.out.println(obj.equals(obj2)); //2
   }
-
 }
