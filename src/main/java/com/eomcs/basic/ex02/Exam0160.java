@@ -1,4 +1,5 @@
 // String - mutable vs immutable 객체
+// 바꿀 수 있는 vs 바꿀 수 없는
 package com.eomcs.basic.ex02;
 
 public class Exam0160 {

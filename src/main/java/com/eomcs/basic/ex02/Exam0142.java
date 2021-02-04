@@ -11,6 +11,7 @@ public class Exam0142 {
     // obj가 가리키는 원래 클래스의 메서드를 호출하고 싶다면
     // 다음과 같이 원래 타입으로 형변환하라.
     String str = ((String) obj).toLowerCase();
+    // (String) 이 없으면 불가능
     System.out.println(str);
 
     // 또는 다음과 같이 원래 타입의 레퍼런스에 저장한 다음 사용하라.
