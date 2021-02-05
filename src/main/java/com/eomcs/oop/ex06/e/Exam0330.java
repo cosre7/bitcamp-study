@@ -10,6 +10,7 @@ class E {
     v1 = 200; // OK!
     //    v1 = 300; // 컴파일 오류!
   }
+  //선언 후 딱 한번만!
 }
 
 public final class Exam0330 {
