@@ -1,7 +1,7 @@
 package com.eomcs.oop.ex06.b;
 
 public class B extends A {
-  
+
   // 부모 클래스인 A에 이미 m() 이라는 이름을 가진 메서드가 여러 개 있다.
   // 그럼에도 불구하고 파라미터 형식이 다른 메서드를 추가한다면 
   // 이것도 마찬가지로 "오버로딩"이다.
@@ -11,4 +11,7 @@ public class B extends A {
   static void m(int a, int b, int c) {
     System.out.println("m(int,int,int)");
   }
+
+  // m(int, String) {}
+  // 이것의 경우 A의 m(int, String)을 재정의한 것이기 때문에 오버라이딩!
 }

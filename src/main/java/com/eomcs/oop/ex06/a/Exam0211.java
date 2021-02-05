@@ -40,6 +40,12 @@ public class Exam0211 {
     s.sunroof = true;
     s.auto = true;
 
+    // 연습
+    Car c = (Sedan)v1;
+    c.cc = 1980;
+    c.valve = 16;
+    // c.sunroof = true; -> 불가능
+
     System.out.printf("%s, %d, %d, %d, %b, %b\n",
         s.model, s.capacity,
         s.cc, s.valve,

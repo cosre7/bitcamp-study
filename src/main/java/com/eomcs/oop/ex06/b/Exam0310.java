@@ -3,7 +3,7 @@ package com.eomcs.oop.ex06.b;
 
 public class Exam0310 {
   public static void main(String[] args) {
-    
+
     // 다양한 파라미터 값을 받는 println()
     System.out.println(100);
     System.out.println(true);
@@ -13,6 +13,7 @@ public class Exam0310 {
     Integer obj1 = Integer.valueOf(100);
     Integer obj2 = Integer.valueOf("100");
     Integer obj3 = Integer.valueOf("64", 16);
+    // 10진수 100을 16진수 64로 표현한 것
 
     System.out.printf("%d, %d, %d\n", obj1, obj2, obj3);
 
