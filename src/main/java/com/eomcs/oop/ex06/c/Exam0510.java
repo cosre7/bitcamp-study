@@ -2,6 +2,26 @@
 package com.eomcs.oop.ex06.c;
 
 public class Exam0510 {
+
+  static class A {
+    String name = "A";
+    String tel = "A: 010-1111-1111";
+    boolean working = true;
+  }
+
+  static class A2 extends A {
+    int age = 20;
+  }
+
+  static class A3 extends A {
+    int age = 30;
+  }
+
+
+  static class A4 extends A3 {
+    String age = "40";
+  }
+
   public static void main(String[] args) {
     A4 obj1 = new A4();
 
@@ -12,7 +32,7 @@ public class Exam0510 {
 
     // 레퍼런스를 형변환 하면 오버라이딩 하기 전,
     // 해당 클래스의 인스턴스 변수를 가리킬 수 있다.
-    System.out.println(((A3)obj1).age);
+    System.out.println(((A3)obj1).age); // A3 입장에서 .age를 찾아 출력
     System.out.println(((A3)obj1).working); // 없으면 수퍼 클래스의 필드를 가리킨다.
     System.out.println("-----------------------------");
 
