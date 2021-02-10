@@ -30,6 +30,8 @@ abstract class A4 {
 }
 
 class A4Sub extends A4 {
+  // 일반적인 메서드들은 그냥 상속
+  // 추상 메서드는 무조건 구현
   @Override // 이 애노테이션은 빼도 된다.
   public void m3() {
     System.out.println("A4Sub.m3() 호출됨!");
@@ -39,8 +41,8 @@ class A4Sub extends A4 {
 public class Exam04 {
   public static void main(String[] args) {
     A4 obj = new A4Sub();
-    System.out.println(A4.value1);
-    System.out.println(obj.value2);
+    System.out.println(A4.value1); // static 필드 -> 클래스 이름으로 사용!
+    System.out.println(obj.value2); // 인스턴스 필드 -> 인스턴스 주소 사용!
     A4.m1();
     obj.m2();
     obj.m3();
