@@ -18,7 +18,7 @@ interface MyInterface {
   // abstract 를 생략할 수 있다.
   public void m3();
 
-  // public, abstract 모두 생략할 수 있다.
+  // public, abstract 모두 생략할 수 있다. -> 보통 이렇게 사용한다.
   void m4();
 
   // => private, protected, (default)는 없다.
@@ -28,8 +28,11 @@ interface MyInterface {
 
 }
 
-// 2) 인터페이스 구현
+// 2) 인터페이스 구현 = 인터페이스에 따라 클래스를 정의한다.
 abstract class MyInterfaceImpl implements MyInterface {
+  // abstract 클래스 -> MyInterface의 5개의 메서드 중에서
+  //                    2개의 메서드만 정의를 하고 나머지 3개는 하지 않았다
+  //                    -> 따라서 추상 클래스가 될 수 밖에 없다
   @Override
   public void m1() {}
 
@@ -40,12 +43,13 @@ abstract class MyInterfaceImpl implements MyInterface {
   //  void m2() {} // 컴파일 오류!
   public void m2() {} // OK!
 
-  // 인터페이스의 모든 메서드를 구현해야 한다.
+  // 인터페이스의 모든 메서드를 구현해야 한다. (m3, m4, m7이 없다)
   // 한 개라도 빠뜨린다면 concrete 클래스가 될 수 없다.
   // 추상 클래스로 선언해야 한다.
 }
 
 class MyInterfaceImpl2 implements MyInterface {
+  // 인터페이스의 모든 메서드를 구현했다 => 일반 클래스가 될 수 있다.
   @Override
   public void m1() {}
 

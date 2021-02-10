@@ -28,6 +28,7 @@ public class Exam01 {
     // 공식적으로 Worker 구현체가 아니기 때문에 
     // 레퍼런스에 담을 수 없다. 
     //Worker w4 = new HulWorker(); // 컴파일 오류!
+    // HulWorker에는 implements Worker가 없어서 오류
 
     // => 인터페이스를 구현하지 않은 클래스의 인스턴스 주소는 저장할 수 없다. 
     //Worker w5 = new String();// 컴파일 오류!

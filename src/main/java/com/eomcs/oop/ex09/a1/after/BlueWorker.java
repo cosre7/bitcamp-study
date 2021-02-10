@@ -13,6 +13,9 @@ public class BlueWorker implements Worker {
   // 추상 클래스로 바꿔야 한다.
   // 
 
+  // 인터페이스를 따른다 -> 인터페이스에서 정의된 메서드를 사용한다
+  // 사용하지 않으면 -> 에러
+  //                 => 추상 메서드 형식으로 바꾸던지 메서드를 사용하던지
   @Override
   public void execute() {
     System.out.println("육체 노동자가 일을 합니다!");

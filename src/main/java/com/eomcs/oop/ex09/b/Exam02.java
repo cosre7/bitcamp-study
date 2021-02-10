@@ -1,10 +1,9 @@
 // 인터페이스 필드
 package com.eomcs.oop.ex09.b;
 
-
 // 인터페이스 필드 선언
 interface MyInterface2 {
-  // 인터페이스 필드는 public static final 이다.
+  // 인터페이스 필드는 public static final 이다. // 상수!
   // - 인스턴스를 생성할 수 없기 때문에 인스턴스 필드를 선언할 수 없다.
   // - 규칙이기 때문에 무조건 public 이다.
   // - 인스턴스 필드가 아니기 때문에 값을 변경할 수 없다.

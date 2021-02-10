@@ -3,9 +3,10 @@ package com.eomcs.oop.ex09.b;
 
 interface MyInterface4 {
 
-  // 인터페이스 내부에서 사용할 메서드라면
+  // 인터페이스 내부에서"만" 사용할 메서드라면
   // private 접근 범위를 갖는
   // 구현 메서드를 정의할 수 있다.
+  // -> 특별한 일이 아니면 이러지 말자
   private void m1() {
     System.out.println("MyInterface4.m1()");
   }
