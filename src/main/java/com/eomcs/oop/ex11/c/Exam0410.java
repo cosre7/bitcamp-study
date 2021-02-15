@@ -18,6 +18,7 @@ public class Exam0410 {
   public static void main(String[] args) {
     D outer = new D();
     X obj = outer.new X();
+    // D.X 라고 사용할 필요가 없어진다.
     obj.test();
 
     M outer2 = new M();

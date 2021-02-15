@@ -18,15 +18,56 @@ public class Exam0210 {
 
   // 2) non-static nested class = inner class
   // => 바깥 클래스의 인스턴스에 종속되는 클래스.
+  //    중첩 클래스에서 바깥 클래스의 인스턴스 멤버를 사용한다는 뜻이다.
+  //    바깥 클래스의 인스턴스 없이 작업할 수 없는 경우
+  //    중첩 클래스를 non-static nested class로 정의한다.
   // => 바깥 클래스의 인스턴스 없이 생성할 수 없다. 
-  class B {}
+  class B {} // -> 현재 바깥 인스턴스 사용안하는 중 => static으로 해도 상관 없음
 
   // => 다른 인스턴스 멤버
   int b; // 논스태틱 필드 = 인스턴스 필드
   void m2() {}; // 논스태틱 메서드 = 인스턴스 메서드
   {} // 인스턴스 블록
 
+  //  void m() { // -> 바깥 인스턴스 사용 중 => 인스턴스 메서드로 하기
+  //    this.b = 100;
+  //    this.m2();
+  //  }
+
+  class OK { // -> 바깥 인스턴스 사용 중 => 인스턴스 클래스로 하기
+    void m() {
+      Exam0210.this.b = 200;
+      b = 200;
+      // 위의 두 코드는 같은 것
+      // 로컬 변수 int b 가 선언되지 않으면 b는 Exam0210의 b를 가리키는 것
+    }
+  }
+
+  static class OK2 { // -> 스태틱 클래스로 만든 후 외부 인스턴스를 쓰려면
+    Exam0210 obj; //obj를 만들어서 사용해야 한다 => 외부 인스턴스 쓰는거면 그냥 non-static
+
+    void m() {
+      obj.b = 100;
+    }
+
+    void m2(Exam0210 obj2) { // Exam0210 을 파라미터로 받아서 사용해도 된다.
+      obj.b = 200;
+    }
+  }
+
+  static void m() { // -> 바깥 인스턴스 사용 안함 => 스태틱 메서드로 하기
+
+  }
+
+  // 만약 static과 non-static을 잘 이해하지 못하겠다 => 그냥 다 static으로 해버리기
+
   public static void main(String[] args) {
+
+    A x = new A(); //static  클래스라서 가능
+
+    // B x2 = new B(); // static 클래스가 아니기 때문에 불가능
+
+
     // 3) local class
     // => 특정 메서드 안에서만 사용되는 클래스.
     class C {}
@@ -41,6 +82,9 @@ public class Exam0210 {
     // => 문법
     //      new 수퍼클래스() {클래스 정의}
     //      new 인터페이스() {클래스 정의}
+    // => 주의!
+    //      new extends 수퍼클래스 implements 인터페이스 {클래스 정의} <== 이런 문법은 없다
+    //      수퍼 클래스를 지정하거나 인터페이스를 지정하거나 둘 중 하나만 해야 한다!
 
     Object obj = new Object() {
       // Object 클래스를 상속 받은 익명 클래스를 만들고,

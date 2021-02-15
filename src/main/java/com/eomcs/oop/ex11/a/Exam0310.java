@@ -12,4 +12,10 @@ public class Exam0310 {
   class B2 {}
   protected class B3 {}
   public class B4 {}
+
+  void m() {
+    // 로컬 클래스는 로컬 변수처럼 접근 제어자를 붙일 수 없다.
+    //    private int a = 100; // 컴파일 오류!
+    //    private class C{} // 컴파일 오류!
+  }
 }

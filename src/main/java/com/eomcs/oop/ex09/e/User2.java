@@ -26,7 +26,7 @@ public class User2 {
   // - 기존 인터페이스를 계속 사용할 수 있다.
   static void play(Computer computer) {
     computer.compute();
-    computer.touch();
+    computer.touch(); // first, second, third 에서는 아무런 기능이 작동하지 않는다
     System.out.println("------------------------");
   }
 

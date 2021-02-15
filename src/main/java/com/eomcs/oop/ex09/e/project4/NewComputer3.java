@@ -12,7 +12,7 @@ public class NewComputer3 implements Computer {
 
   // 기존 규칙을 구현하고,
   @Override
-  public void compute() {
+  public void compute() { // 이 규칙은 구현하지 않으면 에러!
     System.out.println("새 컴퓨터..");
   }
 

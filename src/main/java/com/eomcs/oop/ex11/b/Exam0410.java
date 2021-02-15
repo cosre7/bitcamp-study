@@ -23,7 +23,7 @@ public class Exam0410 {
     D.m1();
     D.X obj = new D.X();
 
-    // 다른 패키지 클래스
+    // 다른 패키지 클래스 //import 필수
     M.v2 = 200;
     M.m2();
     M.Y obj2 = new M.Y();

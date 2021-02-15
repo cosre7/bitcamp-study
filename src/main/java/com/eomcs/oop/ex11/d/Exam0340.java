@@ -5,8 +5,8 @@ public class Exam0340 {
 
 
   public static void main(final String[] args) {
-    final Exam0340 obj = new Exam0340();
-    final Runner r = obj.createRunner("홍길동");
+    final Exam0340 obj = new Exam0340(); // 바깥 객체
+    final Runner r = obj.createRunner("홍길동"); //인스턴스 메서드 호출
     // createRunner()의 리턴 값은
     // 이 메서드에 선언된 로컬 클래스인 A의 객체이다.
     // A 객체는 Runner 규칙에 따라 만들었기 때문에
@@ -58,6 +58,7 @@ public class Exam0340 {
         //
         // System.out.printf("%s님이 달립니다!", this.paramName);
 
+        //        name = "임꺽정"; // 불가능 => final을 없애도 불가능
       }
     }
     return new A();

@@ -7,7 +7,7 @@ class F {
     // 바깥 클래스의 객체 주소를 받는 파라미터를 추가한다.
     X() {}
     // => .class 파일의 내용
-    //    F$X(com.eomcs.oop.ex11.c.F arg0);
+    //    F$X(com.eomcs.oop.ex11.c.F arg0); // 바깥 클래스의 객체 주소를 받는 파라미터
     //        0  aload_0 [this]
     //        1  aload_1 [arg0]
     //        2  putfield com.eomcs.oop.ex11.c.F$X.this$0 : com.eomcs.oop.ex11.c.F [10]

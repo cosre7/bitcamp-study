@@ -5,8 +5,7 @@ import static com.eomcs.oop.ex11.b.E.m1;
 import static com.eomcs.oop.ex11.b.E.v1;
 import static com.eomcs.oop.ex11.b.sub.M.m2;
 import static com.eomcs.oop.ex11.b.sub.M.v2;
-
-// 중첩 클래스를 import 할 때는 static을 적지 않는다.
+// 중첩 클래스를 import 할 때는 static을 적지 않는다. (적어도 상관은 없지만 굳이..)
 import com.eomcs.oop.ex11.b.E.X;
 import com.eomcs.oop.ex11.b.sub.M.Y;
 
@@ -25,12 +24,12 @@ class E {
 public class Exam0420 {
 
   public static void main(String[] args) {
-    // 같은 패키지 클래스의 스태틱 멤버
+    // 같은 패키지 클래스의 스태틱 멤버 // import static을 한 경우 클래스 이름을 쓸 필요가 없다
     v1 = 100;
     m1();
     X obj = new X();
 
-    // 다른 패키지 클래스의 스태틱 멤버
+    // 다른 패키지 클래스의 스태틱 멤버 // import static을 한 경우 클래스 이름을 쓸 필요가 없다
     v2 = 200;
     m2();
     Y obj2 = new Y();

@@ -2,7 +2,14 @@
 package com.eomcs.oop.ex11.c;
 
 class E {
-  class X {
+
+  void m(int a) { // non-static 메서드 = 인스턴스 메서드
+    int b = 100;
+  }
+
+  class X { // non-static 클래스 = inner 클래스
+    // E$X = E클래스 안에 소속된 X 클래스 => 중첩 클래스
+
     // 인스턴스 메서드는 this 라는 내장 변수에 인스턴스 주소를 보관한다.
     // 그렇다면 inner class는 어디에 보관할까?
     // - 자바 컴파일러는 바깥 클래스의 인스턴스 주소를 저장하기 위해 

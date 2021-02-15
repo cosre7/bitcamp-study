@@ -10,13 +10,13 @@ class C {
     class X {
       // 그래서 인스턴스 메서드 안에 정의된 로컬 클래스는
       // 바깥 클래스의 인스턴스를 사용할 수 있다.
-      // .class 파일을 확인해보면 바깥 클래스이 인스턴스 주소를 저장하는 필드가 선언되어 있다.
+      // .class 파일을 확인해보면 바깥 클래스에 인스턴스 주소를 저장하는 필드가 선언되어 있다.
       // 또한 생성자에서 바깥 클래스의 인스턴스 주소를 받는 파라미터가 선언되어 있다.
       //
-      //      class com.eomcs.oop.ex11.d.C$1X {
+      //      class com.eomcs.oop.ex11.d.C$1X { //바깥 클래스에 인스턴스 주소를 저장하는 필드
       //        final synthetic com.eomcs.oop.ex11.d.C this$0;
       //
-      //        C$1X(com.eomcs.oop.ex11.d.C arg0);
+      //        C$1X(com.eomcs.oop.ex11.d.C arg0); //생성자에서 바깥 클래스의 인스턴스 주소를 받는 파라미터
       //           0  aload_0 [this]
       //           1  aload_1 [arg0]
       //           2  putfield com.eomcs.oop.ex11.d.C$1X.this$0 : com.eomcs.oop.ex11.d.C [10]
