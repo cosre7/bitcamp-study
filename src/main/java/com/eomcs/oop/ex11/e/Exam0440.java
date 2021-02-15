@@ -2,7 +2,6 @@
 package com.eomcs.oop.ex11.e;
 
 public class Exam0440 {
-  // 인터페이스의 경우 static으로 선언하지 않아도 스태틱 멤버에서 사용할 수 있다.
   interface A {
     void print();
   }
