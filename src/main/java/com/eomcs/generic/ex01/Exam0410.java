@@ -14,6 +14,11 @@ public class Exam0410 {
     return arr;
   }
 
+  static int[] reverse(int[] arr) {
+    // reverse는 int 값을 받아서 역순으로 바꾸는 메서드이다.
+    // 빈 칸을 손코딩으로 완성하시오 -> 문제
+    return arr;
+  }
   // 제네릭 적용 후
   static <T> T[] reverse2(T[] arr) {
     for (int i = 0; i < arr.length / 2; i++) {

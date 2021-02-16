@@ -15,7 +15,7 @@ public class Exam0510 {
     return null;
   }
 
-  // 예2) 견본 배열을 받아서 복제하는 방법을 사용한다.
+  // 예2) 견본 배열을 받아서 복제하는 방법을 사용한다. 
   static <T> T[] create2(T[] arr) {
     // copyOf(original, newLength)
     // => 원래 배열(original)과 같은 타입의 배열을 배열크기(newLength)에 맞춰 새로 생성한다.
@@ -25,13 +25,22 @@ public class Exam0510 {
   // 예3) 배열의 타입 정보를 받아 생성하기
   @SuppressWarnings("unchecked")
   static <T> T[] create3(Class<?> type) {
+    // <?> 어떤 타입의 클래스인지 상관 없다는 것
+    // <String>이면 String 클래스 타입
     return (T[]) Array.newInstance(type, 10);
   }
 
   // 예4) 견본 배열의 타입 정보를 가지고 배열을 생성하기
   @SuppressWarnings("unchecked")
   static <T> T[] create4(T[] arr) {
-    return (T[]) Array.newInstance(arr.getClass(), 10);
+    Class<?> arrayType = arr.getClass(); // 예) String[] -> 배열
+    System.out.println(arrayType);
+
+    Class<?> arrayItemType = arrayType.getComponentType(); // 예) String -> 배열의 항목
+    System.out.println(arrayItemType);
+
+    return (T[]) Array.newInstance(arrayItemType, 10);
+    // 배열의 항목을 줘야 한다.
   }
 
   public static void main(String[] args) {
@@ -45,15 +54,18 @@ public class Exam0510 {
     // copyOf() 그래도 새 크기에 맞춰 새 배열을 생성한다.
     String[] temp = new String[100];
     String[] strs2 = create2(temp);
+    // 100개짜리 견본 배열 중 10개만 복사해서 리턴
     System.out.println(strs2.length);
     System.out.println(temp == strs2);
 
     // 생성할 배열의 타입 정보를 넘긴다.
     String[] strs3 = create3(String.class);
     System.out.println(strs3.length);
+
+    // 배열을 넘기면 배열의 항목 타입을 알아내어 새 배열을 만든다.
+    String[] strs4 = create4(new String[0]);
+    System.out.println(strs4.length);
   }
-
-
 }
 
 
