@@ -26,6 +26,8 @@ public class Exam0410 {
     // 결론!
     // => key나 value에 null을 사용하고 싶다면 HashMap을 사용하라.
     // => key나 value가 null이 되어서는 안된다면 Hashtable을 사용하라.
+    // 속도는 HashMap이 더 빠르다 
+    // 평상시에는 HashMap을 쓰자
 
   }
 

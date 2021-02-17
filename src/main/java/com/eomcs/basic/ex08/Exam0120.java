@@ -53,6 +53,7 @@ public class Exam0120 {
     System.out.println("-----------------------------------");
 
     System.out.println(map.get(k6));
+    // 인스턴스 값이 같다고 같은 키라고 볼 수는 없다
     // k6로 값을 찾으면 없다고 나온다.
     // 이유?
     // - 값을 저장할 때,

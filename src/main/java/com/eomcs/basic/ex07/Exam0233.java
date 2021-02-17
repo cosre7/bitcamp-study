@@ -1,4 +1,5 @@
 // Iterator 의 사용
+// 컬렉션에 상관없이 일관성
 package com.eomcs.basic.ex07;
 
 import java.util.Iterator;

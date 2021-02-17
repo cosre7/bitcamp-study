@@ -17,6 +17,8 @@ public class Exam0230 {
 
     Set<Entry<String,Member>> entrySet = map.entrySet();
     // key,value가 한쌍으로 묶여있는 객체들이 들어있다.
+    // key + value = entry
+    // entry 객체 안에 들어있는 key는 String 타입, value는 Member 타입
 
     for (Entry<String,Member> entry : entrySet) {
       System.out.printf("%s ===> %s\n",

@@ -1,7 +1,8 @@
-// java.util.Collection의 forEach() 사용법
+// 목록 조회: Iterator 사용
 package com.eomcs.basic.ex03;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Exam0230 {
   public static void main(String[] args) {
@@ -58,8 +59,10 @@ public class Exam0230 {
     list.add(m2);
     list.add(m3);
 
-    list.forEach(item -> {
-      System.out.println(item);
-    });
+    Iterator<Member> iterator = list.iterator();
+    while (iterator.hasNext()) {
+      Member m = iterator.next();
+      System.out.printf("이름: %s, 나이: %d\n", m.name, m.age);
+    }
   }
 }

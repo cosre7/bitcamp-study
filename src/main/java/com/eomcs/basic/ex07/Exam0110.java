@@ -13,7 +13,7 @@ import java.util.HashSet;
 //    - 즉 중복된 값을 저장하고 싶지 않을 때 HashSet을 사용한다.
 // 2) 값을 순서대로 저장하지 않는다.
 //    - 값 객체의 hashCode()의 리턴 값으로 저장 위치를 계산하기 때문에
-//      add() 한 순서대로 저장되지 않는다.
+//      add() 한 순서대로 저장되지 않는다. // hashCode 리턴값으로 저장
 //    - 그래서 값을 index를 이용하여 꺼낼 수 없다.
 //
 public class Exam0110 {

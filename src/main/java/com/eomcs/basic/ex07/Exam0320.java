@@ -38,8 +38,6 @@ public class Exam0320 {
         return false;
       return true;
     }
-
-
   }
 
   public static void main(String[] args) {

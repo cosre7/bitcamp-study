@@ -47,8 +47,7 @@ public class Exam0340 {
         return false;
       return true;
     }
-
-
+    // => hashCode와 equals 를 자동생성하는 기능에서 둘은 짝으로 되어있다
   }
 
   public static void main(String[] args) {

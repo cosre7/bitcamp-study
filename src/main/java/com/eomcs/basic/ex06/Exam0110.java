@@ -18,6 +18,7 @@ public class Exam0110 {
     queue.offer(s3); // aaa, bbb, ccc,
     print(queue);
 
+    //poll : 아예 꺼내서 빼버린다
     System.out.println("==>" + queue.poll()); // bbb, ccc,
     System.out.println("==>" + queue.poll()); // ccc,
     print(queue);
