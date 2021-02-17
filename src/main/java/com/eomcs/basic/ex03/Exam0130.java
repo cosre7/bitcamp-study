@@ -68,9 +68,9 @@ public class Exam0130 {
     Member m4 = new Member("임꺽정", 30);
     System.out.println(list.contains(m4)); // true
 
-    System.out.println(m2 == m4);
-    System.out.println(m2.equals(m4));
-    System.out.println(m2.hashCode() == m4.hashCode());
+    System.out.println(m2 == m4); //false // 인스턴스 주소가 같으냐?
+    System.out.println(m2.equals(m4)); //true // 내용이 같으냐?
+    System.out.println(m2.hashCode() == m4.hashCode()); //false
 
   }
 }

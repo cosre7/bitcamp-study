@@ -1,9 +1,9 @@
-// 목록 조회: 반복문과 인덱스를 이용한 목록 조회
+// java.util.Collection의 forEach() 사용법
 package com.eomcs.basic.ex03;
 
 import java.util.ArrayList;
 
-public class Exam0210 {
+public class Exam0220 {
   public static void main(String[] args) {
 
     class Member {

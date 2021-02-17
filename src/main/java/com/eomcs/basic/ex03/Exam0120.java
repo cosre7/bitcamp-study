@@ -5,6 +5,18 @@ import java.util.ArrayList;
 
 public class Exam0120 {
   public static void main(String[] args) {
+    String s1 = new String("aaa");
+    String s2 = new String("aaa");
+    System.out.println(s1 == s2);
+    // 각각 힙 메모리에 저장 -> false
+
+    String s3 = "aaa";
+    String s4 = "aaa";
+    System.out.println(s3 == s4); // true
+    // 스트링풀에 스트링 인스턴스를 만든다 -> 인스턴스 주소 리턴 => 주소가 같다
+    // 프리머티브 타입의 변수처럼 생각
+    // 실제는 주소가 리턴되는 것!
+
     // 특정 타입의 목록을 다루고 싶다면,
     // 타입 파라미터로 해당 타입을 지정하라.
     //
@@ -25,22 +37,29 @@ public class Exam0120 {
     list.add("aaa");
     list.add("bbb");
     System.out.println(list); // [aaa, bbb, ccc, ddd, null, eee, null, aaa, bbb]
+    // System.out.println(list.toString()); 할 필요 없음
 
     // remove(index)
     // - 목록에서 해당 인덱스의 값을 삭제한다.
     // - 리턴 값은 삭제된 값이다.
-    String s = list.remove(2);
+    String s = list.remove(2); // 지운 후에 지운 값 리턴해줌
     System.out.println(s); // ccc
     System.out.println(list); // [aaa, bbb, ddd, null, eee, null, aaa, bbb]
 
-    list.remove(0);
+    list.remove(0); // 리턴해준 값을 받는 변수가 없어서 그냥 날아감
     System.out.println(list); // [bbb, ddd, null, eee, null, aaa, bbb]
 
     // add(index, value)
     // - 해당 위치에 값을 삽입한다.
     list.add(1, "xxx");
+    System.out.println(list); // [bbb, xxx, ddd, null, eee, null, aaa, bbb]
+
     list.add(1, "yyy");
+    System.out.println(list); // [bbb, yyy, xxx, ddd, null, eee, null, aaa, bbb]
+
     list.add(0, "zzz");
+    System.out.println(list); // [zzz, bbb, yyy, xxx, ddd, null, eee, null, aaa, bbb]
+
     list.add(5, "ttt");
     System.out.println(list); // [zzz, bbb, yyy, xxx, ddd, ttt, null, eee, null, aaa, bbb]
 

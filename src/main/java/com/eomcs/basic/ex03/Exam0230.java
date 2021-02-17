@@ -3,7 +3,7 @@ package com.eomcs.basic.ex03;
 
 import java.util.ArrayList;
 
-public class Exam0310 {
+public class Exam0230 {
   public static void main(String[] args) {
 
     class Member {
