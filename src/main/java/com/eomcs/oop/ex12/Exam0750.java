@@ -39,6 +39,23 @@ public class Exam0750 {
     // => 스태틱 메서드 레퍼런스, 인스턴스 메서드 레퍼런스, 생성자 레퍼런스 
     Collection<String> c1 = prepareNames(ArrayList<String>::new, 
         "홍길동", "임꺽정", "유관순", "임꺽정");
+    // 컴파일러는 다음의 자바 코드로 변경한다.
+    class MySupplier<T> implements Supplier<Collection<T>> {
+      @Override
+      public Collection<T> get() {
+        return null;
+      }
+    }
+    // Supplier : <T> 타입의 Collection 객체를 만들어주는 
+
+    Supplier<Collection<String>> list = new Supplier<Collection<String>> () {
+      @Override
+      public Collection<String> get() {
+        return null;
+      }
+    };
+    Collection<String> c1x = prepareNames(list, "AAA", "BBB", "CCC");
+
     print(c1.iterator());
 
     System.out.println("------------------------");

@@ -19,11 +19,11 @@ public class Exam0730 {
     }
   }
 
-  static interface Factory1 {
+  interface Factory1 {
     Message get();
   }
 
-  static interface Factory2 {
+  interface Factory2 {
     Message get(String name);
   }
 

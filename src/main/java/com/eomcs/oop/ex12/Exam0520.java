@@ -22,7 +22,7 @@ public class Exam0520 {
     }
   }
 
-  static interface Calculator {
+  interface Calculator {
     int compute(int a, int b);
   }
 
@@ -31,7 +31,7 @@ public class Exam0520 {
     //
     // Calculator c1 = MyCalculator::plus;
 
-    // 위의 코드는 내부적으로 다음과 같다.
+    // 위의 코드는 내부적으로 다음과 같다. -> 자바 컴파일러가 바꾼다.
     //
     Calculator c1 = new Calculator() {
       @Override

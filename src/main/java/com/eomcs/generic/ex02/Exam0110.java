@@ -14,7 +14,7 @@ public class Exam0110 {
     //    클래스명<타입명>
     //
     ArrayList<Member> list = new ArrayList<Member>();
-    list.add(new Member("홍길동", 20));
+    list.add(new Member("홍길동", 20)); // Member 타입만 들어갈 수 있다
 
     // ArrayList를 선언할 때 지정한 타입이 아닌 경우에는 컴파일 오류가 발생한다.
     // => 컬렉션에 잘못된 값이 들어갈 상황을 없앨 수 있다.

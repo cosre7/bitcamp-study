@@ -42,7 +42,17 @@ public class Exam0610 {
     Calculator 청년행복예금 = new Calculator(10);
 
     System.out.println("[보통예금]");
+
     Interest i1 = 보통예금::year;
+
+    //    Interest i1 = new Interest() {
+    //      @Override
+    //      public double compute(int money) {
+    //        // TODO Auto-generated method stub
+    //        return 보통예금.year(money);
+    //      }
+    //    };
+
     System.out.printf("년 이자: %.1f\n", i1.compute(10_0000_0000));
 
     i1 = 보통예금::month;

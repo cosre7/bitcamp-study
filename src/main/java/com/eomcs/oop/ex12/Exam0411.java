@@ -16,6 +16,13 @@ public class Exam0411 {
       // 또한 그 값을 받을 수 있도록 생성자를 변경한다.
       // 따라서 개발자가 직접 필드나 생성자를 정의할 필요가 없다.
       //
+
+      // 컴파일러가 자동 생성하는 코드
+      //      double temp;
+      //      public InterestImpl(double temp) {
+      //        this.temp = temp;
+      //      }
+
       @Override
       public double compute(int money) {
         return money + (money * rate / 100);

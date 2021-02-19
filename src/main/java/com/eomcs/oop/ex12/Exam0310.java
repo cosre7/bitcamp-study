@@ -12,16 +12,35 @@ public class Exam0310 {
   }
 
   public static void main(String[] args) {
-    // 로컬 클래스
-    class MyPlayer implements Player {
-      @Override
-      public void play() {
-        System.out.println("실행!");
-      }
-    }
+    // // 로컬 클래스
+    //    class MyPlayer implements Player {
+    //      @Override
+    //      public void play() {
+    //        System.out.println("실행!");
+    //      }
+    //    }
+    //
+    //    testPlayer(new MyPlayer());
 
-    testPlayer(new MyPlayer());
+    // 익명 클래스
+    //    Player player = new Player() {
+    //      @Override
+    //      public void play() {
+    //        System.out.println("실행!");
+    //      }
+    //    };
+    //    testPlayer(player);
 
+    //    // 아규먼트
+    //    testPlayer(new Player() {
+    //      @Override
+    //      public void play() {
+    //        System.out.println("실행!");
+    //      }
+    //    });
+
+    //    // 람다
+    //    testPlayer(() -> System.out.println("실행!"));
   }
 }
 

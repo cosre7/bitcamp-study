@@ -6,6 +6,14 @@ public class Exam0160 {
     void print();
   }
 
+  static A obj0 = new A() {
+    // 인터페이스를 구현한 메서드
+    @Override
+    public void print() {
+      System.out.println("스태티 필드");
+    };
+  };
+
   // 스태틱 필드
   static A obj1 = () -> System.out.println("스태틱 필드");
 

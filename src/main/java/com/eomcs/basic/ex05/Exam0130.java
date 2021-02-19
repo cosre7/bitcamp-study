@@ -14,9 +14,9 @@ public class Exam0130 {
     stack.push("ccc");
 
     // peek() - 맨 위의 값을 꺼낸다. 단 pop()과는 달리 제거하지 않는다. // 아예 꺼내는 게 아니라 조회
-    System.out.println(stack.peek());
-    System.out.println(stack.peek());
-    System.out.println(stack.peek());
+    System.out.println(stack.peek()); // ccc
+    System.out.println(stack.peek()); // ccc
+    System.out.println(stack.peek()); // ccc
 
   }
 

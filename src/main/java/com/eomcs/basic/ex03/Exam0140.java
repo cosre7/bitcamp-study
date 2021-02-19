@@ -65,11 +65,11 @@ public class Exam0140 {
     //   equals()의 리턴 값이 true인 경우 같은 값으로 간주한다.
     //
     Member m4 = new Member("임꺽정", 30);
-    System.out.println(list.indexOf(m4)); // true
+    System.out.println(list.indexOf(m4)); // 1
 
-    System.out.println(m2 == m4);
-    System.out.println(m2.equals(m4));
-    System.out.println(m2.hashCode() == m4.hashCode());
+    System.out.println(m2 == m4); // false
+    System.out.println(m2.equals(m4)); // true
+    System.out.println(m2.hashCode() == m4.hashCode()); // false
 
   }
 }

@@ -12,7 +12,7 @@ public class Exam0130 {
     Player p1 = (String name) -> System.out.println(name + " 님 환영합니다.");
     p1.play("홍길동");
 
-    // 2) 파라미터 타입을 생략할 수 있다.
+    // 2) 파라미터 타입을 생략할 수 있다. // 어차피 인터페이스에 정의 => 뻔함
     Player p2 = (name) -> System.out.println(name + " 님 환영합니다.");
     p2.play("홍길동");
 

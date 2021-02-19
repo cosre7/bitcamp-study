@@ -14,7 +14,7 @@ public class Exam0921 {
     names.add("김구");
     names.add("안중근");
 
-    names.forEach(new Consumer<String>() {
+    names.forEach(new Consumer<String>() { // 잘 안씀
       @Override
       public void accept(String item) {
         System.out.println(item);

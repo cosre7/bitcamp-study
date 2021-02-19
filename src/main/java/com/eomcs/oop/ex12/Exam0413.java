@@ -7,7 +7,7 @@ public class Exam0413 {
     double compute(int money);
   }
 
-  static Interest getInterest(final double rate) {
+  static Interest getInterest(final double rate) { //실무에서 주로 사용하는 방법
     // 익명 클래스로 인터페이스 구현한 후 객체 리턴하기
     return new Interest() {
       @Override

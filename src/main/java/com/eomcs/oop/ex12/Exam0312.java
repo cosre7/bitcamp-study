@@ -1,4 +1,5 @@
 // 아규먼트에 람다(lambda) 활용
+// 익명 클래스 -> 파라미터화
 package com.eomcs.oop.ex12;
 
 public class Exam0312 {

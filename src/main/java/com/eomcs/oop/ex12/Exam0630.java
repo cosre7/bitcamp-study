@@ -11,6 +11,7 @@ public class Exam0630 {
 
     // 1) 로컬 클래스로 인터페이스 구현체 만들기
     class MyPredicate<T> implements Predicate<T> {
+      // Predicate: 조건이 맞는지 검사하는 인터페이스 
       @Override
       public boolean test(T value) {
         return ((String)value).isEmpty();

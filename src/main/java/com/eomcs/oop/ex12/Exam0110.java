@@ -4,29 +4,39 @@ package com.eomcs.oop.ex12;
 public class Exam0110 {
 
   // 다음과 같이 추상 메서드가 한 개 있는 인터페이스를 "functional interface"라고 부른다.
-  // => 이런 경우에 람다 문법으로 사용할 수 있다.
+  // => 이런 경우에 람다 문법을 사용할 수 있다.
   // => 인터페이스는 static 을 붙이지 않아도 static 멤버가 사용할 수 있다.
   interface Player {
     void play();
   }
 
+  interface Player2 {
+    void play();
+    void start();
+  }
   public static void main(String[] args) {
 
     // 익명 클래스로 인터페이스 구현하기
-    Player p1 = new Player() {
+    Player p1 = new Player() { // 레퍼런스가 인터페이스 => new Player => 뻔함
       @Override
-      public void play() {
+      public void play() { //메소드 이름 어차피 한 개 => 뻔함
         System.out.println("익명 클래스");
       }
     };
     p1.play();
 
     // 람다 문법으로 인터페이스 구현하기
-    // => 메서드 한 개짜리 인터페이스를 구현한 익명 클래스를 좀 더 간단히 표현하기 위해 만든 문법이다.
+    // => 메서드 한 개짜리 인터페이스를 
+    //    좀 더 간단히 표현하기 위해 만든 문법이다.
+    // => 뻔한 코드 생략!
     Player p2 = () -> {
       System.out.println("람다");
     };
     p2.play();
+
+    //    Player2 p3 = () -> { // 에러 발생! player2 인터페이스에 메서드 2개 => 뻔하지 않음
+    //      System.out.println("람다");
+    //    };
   }
 }
 
@@ -52,3 +62,6 @@ public class Exam0110 {
 //
 // => 람다를 호출하는 코드는 자동 생성된 메서드를 호출하는 코드로 변환된다.
 //
+// 클래스를 정의할 때는  ; 을 붙이지 않아도 된다.
+// 인스턴스를 만들 때는 항상 ;이 붙어야 한다.
+// ex: 익명클래스

@@ -19,9 +19,9 @@ public class Exam0110 {
     print(queue);
 
     //poll : 아예 꺼내서 빼버린다
-    System.out.println("==>" + queue.poll()); // bbb, ccc,
-    System.out.println("==>" + queue.poll()); // ccc,
-    print(queue);
+    System.out.println("==>" + queue.poll()); // aaa
+    System.out.println("==>" + queue.poll()); // bbb
+    print(queue); // ccc,
 
     queue.offer(s4); // ccc, ddd,
     queue.offer(s5); // ccc, ddd, eee,

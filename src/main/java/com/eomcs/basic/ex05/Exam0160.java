@@ -21,6 +21,8 @@ public class Exam0160 {
     while (iterator.hasNext()) {
       System.out.println(iterator.next());
     }
+    // 원래 stack의 기능과 달리 먼저 추가된 값이 먼저 출력된다
+    // aaa bbb ccc
   }
 }
 

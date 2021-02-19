@@ -14,7 +14,7 @@ public class Exam0120 {
 
     // 2) 물론 중괄호를 명확히 적어도 된다.
     Player p2 = () -> {
-      System.out.println("테스트2");
+      System.out.println("테스트2"); // 중괄호가 있어도 ; 필수!
     };
     p2.play();
 

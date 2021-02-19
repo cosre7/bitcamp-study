@@ -42,8 +42,8 @@ public class Exam0120 {
     // remove(index)
     // - 목록에서 해당 인덱스의 값을 삭제한다.
     // - 리턴 값은 삭제된 값이다.
-    String s = list.remove(2); // 지운 후에 지운 값 리턴해줌
-    System.out.println(s); // ccc
+    String s = list.remove(2); // 지운 후에 지운 값 리턴 -> String s가 리턴값을 받음
+    System.out.println(s); // ccc -> 리턴값 출력
     System.out.println(list); // [aaa, bbb, ddd, null, eee, null, aaa, bbb]
 
     list.remove(0); // 리턴해준 값을 받는 변수가 없어서 그냥 날아감

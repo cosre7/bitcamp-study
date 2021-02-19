@@ -26,6 +26,7 @@ public class Exam0110 {
     list.add(Integer.valueOf(100));
     list.add(100);
     list.add(new Date());
+    System.out.println(list);
 
     // ArrayList는 제네릭이 적용되어 있기 때문에
     // 저장할 객체의 타입을 명확히 지정하라.
@@ -36,6 +37,7 @@ public class Exam0110 {
     list2.add(Integer.valueOf(100));
     list2.add(100);
     list2.add(new Date());
+    System.out.println(list2);
   }
 }
 

@@ -22,39 +22,39 @@ public class Exam0540 {
     }
   }
 
-  static interface Calculator1 {
+  interface Calculator1 {
     int compute(byte a, byte b);
   }
 
-  static interface Calculator2 {
+  interface Calculator2 {
     int compute(short a, short b);
   }
 
-  static interface Calculator3 {
+  interface Calculator3 {
     int compute(long a, long b);
   }
 
-  static interface Calculator4 {
+  interface Calculator4 {
     int compute(float a, float b);
   }
 
-  static interface Calculator5 {
+  interface Calculator5 {
     int compute(Object a, Object b);
   }
 
-  static interface Calculator6 {
+  interface Calculator6 {
     int compute(String a, String b);
   }
 
-  static interface Calculator7 {
+  interface Calculator7 {
     int compute(Integer a, Integer b);
   }
 
-  static interface Calculator8 {
+  interface Calculator8 {
     int compute(int a);
   }
 
-  static interface Calculator9 {
+  interface Calculator9 {
     int compute(int a, int b, int c);
   }
 

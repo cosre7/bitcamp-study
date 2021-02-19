@@ -24,7 +24,7 @@ public class Exam0221 {
     // => Object 로 지정된 ArrayList 만 파라미터로 넘길 수 있다.
     // => Object의 하위 클래스는 안된다.
 
-    m1(new ArrayList());
+    m1(new ArrayList()); //허락은 되지만 이건 쓰지 말자
     m1(new ArrayList<Object>());
 
     //m1(new ArrayList<A>());  // 컴파일 오류!
