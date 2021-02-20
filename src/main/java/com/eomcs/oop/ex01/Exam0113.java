@@ -16,6 +16,7 @@ public class Exam0113 {
     float aver;
   }
   // Score 메서드가 main 메서드 안에 있으면 printScore 메서드에서 사용 불가능하다.
+  // main 메서드 안에서만 사용되는 클래스가 된다.
 
   public static void main(String[] args) {
 

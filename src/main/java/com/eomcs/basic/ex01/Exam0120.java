@@ -1,8 +1,6 @@
 // Object 클래스 - toString() 메서드에 대하여
 package com.eomcs.basic.ex01;
 
-
-
 public class Exam0120 {
 
   static class My {
