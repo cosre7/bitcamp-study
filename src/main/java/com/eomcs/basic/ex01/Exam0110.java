@@ -1,8 +1,6 @@
 // Object 클래스 - 자바 최상위 클래스
 package com.eomcs.basic.ex01;
 
-
-
 //클래스를 정의할 때 수퍼 클래스를 지정하지 않으면 
 //컴파일러는 자동으로 Object를 상속 받는다.
 public class Exam0110 /*extends Object*/ {
@@ -22,19 +20,24 @@ public class Exam0110 /*extends Object*/ {
     System.out.println(obj instanceof My);
     // My가 obj가 맞냐?
     // = 티코가 자동차가 맞냐?
-    System.out.println(obj instanceof String);
-    // = 소나타가 자동차가 맞냐?
+
+    System.out.println(obj instanceof String); // false
+    // String은 프리머티브타입처럼 사용되지만 실제로는 아니다
+    // 때문에 new를 사용해서 인스턴스주소를 만들지 않으면 false가 된다.
+
+    Object obj2 = new String();
+    System.out.println(obj2 instanceof String);
+
     System.out.println(obj instanceof Object);
 
     // Object를 조상으로 갖는다면 당연히 Object의 메서드를 사용할 수 있을 것이다.
     System.out.println(obj.toString());
-    System.out.println(obj.hashCode());
     System.out.println(obj.equals("Hello"));
-
+    System.out.println(obj.hashCode());
+    System.out.println(obj.getClass());
     // 결론!
     // => 자바의 모든 클래스는 Object의 자손이다.
   }
-
 }
 
 // Object 클래스의 주요 메서드
