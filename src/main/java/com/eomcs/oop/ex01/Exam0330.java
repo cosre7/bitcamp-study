@@ -14,7 +14,7 @@ public class Exam0330 {
     }
 
     Score s1 = new Score();
-    Score s2 = new Score(); // -> 이 인스턴스가 가비지가 된다.
+    Score s2 = new Score(); // -> 이 인스턴스가 가비지가 된다. // 더이상 s2가 이 인스턴스를 가리키지 않기 때문
 
     s2 = s1;
     // s1의 주소는 s2에도 저장되었다.
