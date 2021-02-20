@@ -45,7 +45,7 @@ public class Exam0510 { //패키지 멤버
     // - 오직 그 메서드 블록 안에서만 사용된다.
     //
     // bin/main/com/eomcs/oop/ex01/Exam0420$1D.class
-    class D {}
+    class D {} // -> main 메서드 안에 정의
 
     // 4) 익명 클래스(anonymouse class)
     // - 클래스 이름이 없는 중첩 클래스이다.
