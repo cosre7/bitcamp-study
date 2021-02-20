@@ -19,6 +19,7 @@ public class Exam0230 {
     Score[] arr = new Score[3];
 
     // 반복문을 이용하여 레퍼런스 배열에 인스턴스 주소를 저장한다.
+    // 0번 인스턴스 주소, 1번 인스턴스 주소, 2번 인스턴스 주소를 한번에 만들 수 있다.
     for (int i = 0; i < arr.length; i++) {
       arr[i] = new Score();
     }
