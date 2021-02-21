@@ -7,6 +7,7 @@ public class Exam0270 {
   // Calculator 클래스를 향후 유지보수하기 쉽도록 별도의 파일로 분리한다.
   // - Calculator.java 파일로 분리한다.
 
+  // 같은 패키지에 소속된 Calculator 클래스 -> import 없이 사용 가능
   public static void main(String[] args) {
     // 다음 두 개의 식을 분리하여 계산해 보자!
     // - 연산자 우선 순위를 고려하지 않고 순서대로 계산하라!
