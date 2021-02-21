@@ -45,7 +45,7 @@ public class Exam0230 {
     // Calculator 내부에서 계산 결과를 관리한다.
     // int result = 0;
 
-    Calculator.plus(2);
+    Calculator.plus(2); // Calculator 클래스의 plus 메서드 호출
     Calculator.plus(3);
     Calculator.minus(1);
     Calculator.multiple(7);
