@@ -13,7 +13,7 @@ public class Exam0130 {
     float average;
 
     // 클래스 메서드로 연산자를 정의하면,
-    // - 계산을 수행할 때마다 인스턴스의 주소를 파라미터로 받아야 한다.
+    // - 계산을 수행할 때마다 인스턴스의 주소 (score의 인스턴스 주소)를 파라미터로 받아야 한다.
     // - 매우 번거롭다.
     //
     // public static void calculate(Score score) {
