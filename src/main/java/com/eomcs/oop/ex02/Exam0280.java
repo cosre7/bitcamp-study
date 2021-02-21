@@ -10,6 +10,7 @@ public class Exam0280 {
   // - com.eomcs.oop.ex02.util 패키지를 만들어 분류한다.
   // - import 를 이용하여 클래스의 패키지 정보를 지정한다.
 
+  // 다른 패키지에 저장된 Calculator 클래스 -> import를 사용하여 경로 지정
   public static void main(String[] args) {
     // 다음 두 개의 식을 분리하여 계산해 보자!
     // - 연산자 우선 순위를 고려하지 않고 순서대로 계산하라!
