@@ -13,10 +13,10 @@ public class Exam0210 {
 
     // 메서드를 호출하여 작업을 수행하고,
     // 리턴 결과는 로컬 변수에 저장한다.
-    result = plus(2, 3);
-    result = minus(result, 1);
-    result = multiple(result, 7);
-    result = divide(result, 3);
+    result = plus(2, 3); // 5 
+    result = minus(result, 1); // 4
+    result = multiple(result, 7); // 28
+    result = divide(result, 3); // 9
 
     System.out.printf("result = %d\n", result);
   }
