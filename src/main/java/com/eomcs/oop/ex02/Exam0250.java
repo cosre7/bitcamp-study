@@ -14,9 +14,11 @@ public class Exam0250 {
 
     static void plus(Calculator obj, int value) {
       // 인스턴스 변수를 다루는 메서드는 작업을 수행할 때 그 인스턴스 주소를 받아야 한다.
+      // 레퍼런스 obj에 result 인스턴스 주소 받기
+
       // result 는 더이상 클래스 변수가 아니기 때문에 직접 접근할 수 없다.
       // 오직 인스턴스 주소를 통해서만 접근 할 수 있다.
-      obj.result += value;
+      obj.result += value; // 레퍼런스 obj의 인스턴스 주소 result
     }
 
     static void minus(Calculator obj, int value) {
@@ -71,6 +73,8 @@ public class Exam0250 {
     // 식2의 계산 결과는 c2 인스턴스의 result 변수에 들어 있다.
     System.out.printf("c1.result = %d\n", c1.result);
     System.out.printf("c2.result = %d\n", c2.result);
+    // 계산 완료 후 다음 식을 계산할 수 있던 클래스 변수와 달리
+    // 인스턴스 변수의 경우 동시에 계산이 가능하다.
   }
 }
 
