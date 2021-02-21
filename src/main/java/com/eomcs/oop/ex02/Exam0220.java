@@ -42,7 +42,7 @@ public class Exam0220 {
 
     // 클래스 메서드를 호출하여 작업을 수행하고,
     // 리턴 결과는 로컬 변수에 저장한다.
-    result = Calculator.plus(2, 3);
+    result = Calculator.plus(2, 3); // Caluculator 클래스의 plus 메서드 호출
     result = Calculator.minus(result, 1);
     result = Calculator.multiple(result, 7);
     result = Calculator.divide(result, 3);
