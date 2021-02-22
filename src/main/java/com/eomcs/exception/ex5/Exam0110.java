@@ -9,9 +9,13 @@ public class Exam0110 {
   static Board read() {
     try (Scanner keyScan = new Scanner(System.in)) {
       Board board = new Board();
+      // try: Scanner를 자동으로 close() 하기 위함
+      // try 만 있고 catch는 없다 
+      // -> 아~ Scanner 객체를 쓰고 나서 try 블럭을 나가기 전에 close()하려고 했구나
 
       System.out.print("번호> ");
       board.setNo(Integer.parseInt(keyScan.nextLine()));
+      // throws NumberFormatException 생략된 상태 -> RuntimeException의 서브 클래스
 
       System.out.print("제목> ");
       board.setTitle(keyScan.nextLine());
