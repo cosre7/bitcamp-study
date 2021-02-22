@@ -9,9 +9,9 @@ public class Exam0121 {
     int result = Calculator.compute("-", 6, 7);
 
     // 위의 계산 결과는 정상적인 값이다.
-    // 그런데도 불구하고 다음과 같이 -1을 리턴하는 경우 오류로 간주하기 때문에
+    // 그럼에도 불구하고 다음과 같이 -1을 리턴하는 경우 오류로 간주하기 때문에
     // 잘못된 결과를 출력한다.
-    if (result == -1) {
+    if (result == -1) { // 유효한 값이지만 결과가 -1이기 때문에 오류취급
       System.out.println("유효하지 않은 연산자입니다!");
     } else {
       System.out.println(result);
