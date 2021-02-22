@@ -1,13 +1,11 @@
-// 던지는 예외를 메서드에 선언하기
+// 던지는 예외 받기 - 예외 처리 책임을 상위 호출자에게 위임
 package com.eomcs.exception.ex3;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class Exam0310 {
+public class Exam0421 {
 
-  // 메서드에서 발생되는 예외는 메서드 선언부에 모두 나열해야 한다. 
-  // 예외처리가 있는 메서드를 만드는 입장의 개발자 (던지는 입장)
   static void m(int i) throws Exception, RuntimeException, SQLException, IOException {
     if (i == 0)
       throw new Exception();
@@ -19,6 +17,11 @@ public class Exam0310 {
       throw new IOException();
   }
 
-  public static void main(String[] args) {}
+  // 메서드 안에서 발생하는 예외에 대해 
+  // 메서드 선언부에 모두 적지 않고,
+  // 그 예외들의 공통 분모에 해당하는 수퍼 클래스만 적어도 된다.
+  public static void main(String[] args) throws Exception {
+    m(1);
+  }
 
 }

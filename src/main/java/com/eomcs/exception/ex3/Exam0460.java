@@ -22,7 +22,8 @@ public class Exam0460 {
       // try 블록에서 예외가 발생할 수 있는 메서드를 호출한다.
       m(1);
 
-    } catch (RuntimeException | SQLException | IOException e) {
+    } catch (RuntimeException | SQLException | IOException e) { // 처리하는 방식이 같을 때
+      // -> catch 문에서만 가능한 기능
       // OR 연산자를 사용하여 여러 개의 예외를 묶어 받을 수 있다.
       //
     } catch (Exception e) {

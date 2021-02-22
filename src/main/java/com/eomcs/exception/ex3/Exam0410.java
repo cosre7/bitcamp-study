@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 public class Exam0410 {
 
+  // 예외를 던지는 메서드를 호출하는 입장의 개발자 (메서드를 호출하는 입장)
   static void m(int i) throws Exception, RuntimeException, SQLException, IOException {
     if (i == 0)
       throw new Exception();
