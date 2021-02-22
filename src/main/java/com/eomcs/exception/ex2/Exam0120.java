@@ -1,4 +1,5 @@
 // 예외 처리 문법을 적용한 후 - 시스템을 멈추지 않고 계속 실행할 수 있다. 
+// 예외가 발생해도 시스템이 멈추지 않고 계속 실행할 수 있도록 해주는 문법 -> 예외 처리 문법
 package com.eomcs.exception.ex2;
 
 import java.util.InputMismatchException;
@@ -27,6 +28,7 @@ public class Exam0120 {
       } catch (RuntimeException e) {
         System.out.println(e.getMessage());
       } 
+      // 메시지를 던져준 후에 계속 프로그램 실행
     }
     keyScan.close();
   }
