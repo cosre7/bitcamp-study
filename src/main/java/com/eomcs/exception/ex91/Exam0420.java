@@ -25,9 +25,7 @@ public class Exam0420 {
 
   public static void main(String[] args) {
 
-    // 예외 처리 문법을 사용하지 않으면 호출할 수 없다. (throws Exception 또는 try / catch 문법)
-    // main 메서드에서 예외처리를 할 경우 throws Exception은 쓰지 말자
-    // 최후의 보루이다.
+    // 예외 처리 문법을 사용하지 않으면 호출할 수 없다. (throws Exception 또는 try ~ catch 문법)
 
     //    computeScore(100, 90, 80);  // 컴파일 오류!
 

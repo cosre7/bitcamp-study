@@ -13,7 +13,7 @@ public class Exam0421 {
       throw new RuntimeException();
     else if (i == 2)
       throw new SQLException();
-    else
+    else if (i == 3)
       throw new IOException();
   }
 
@@ -21,7 +21,7 @@ public class Exam0421 {
   // 메서드 선언부에 모두 적지 않고,
   // 그 예외들의 공통 분모에 해당하는 수퍼 클래스만 적어도 된다.
   public static void main(String[] args) throws Exception {
-    m(1);
+    m(3);
   }
 
 }

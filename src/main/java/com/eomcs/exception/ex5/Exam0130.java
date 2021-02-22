@@ -10,7 +10,7 @@ public class Exam0130 {
   // 대신에 기존 예외를 상속 받아 의미있는 이름으로 서브 클래스를 정의한 다음에
   // 그 예외 클래스를 사용한다.
 
-  //BoardException 그 프로그램 만의 예외를 만든다 
+  //BoardException Board 만의 예외를 만든다 
   static Board read() throws BoardException {
     try (Scanner keyScan = new Scanner(System.in)) {
       Board board = new Board();

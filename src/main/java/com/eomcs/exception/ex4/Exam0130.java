@@ -29,7 +29,7 @@ public class Exam0130 {
   static void m4() /* throws RuntimeException */ {
     // RuntimeException을 상위 호출자에게 전달할 때는
     // 굳이 메서드 선언부에 지정하지 않아도 된다.
-    // 하지만 매뉴얼 상에는 100% 반드시 예외가 있다는 것을 명시해야만 한다!
+    // 하지만 매뉴얼 상에는 반드시 예외가 있다는 것을 명시해야만 한다!
     throw new RuntimeException("m4()에서 예외 발생!");
   }
 
