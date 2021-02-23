@@ -13,13 +13,16 @@ public class Exam0130 {
     /*
       while (true) {
         b = in.read();
-        if (b == -1) // 파일의 끝에 도달하면 -1을 리턴한다.
+        if (b == -1) // 파일의 끝에 도달하면 -1을 리턴한다. // 더 이상 읽을 것이 없다!
           break;
-        System.out.print(Integer.toHexString(b) + " ");
+        System.out.printf("%02x ", b);
       }
      */
-    while ((b = in.read()) != -1) {
-      System.out.print(Integer.toHexString(b) + " ");
+    while ((b = in.read()) != -1) { 
+      // 1. in.read()에서 읽은 값을 b에 넣음
+      // 2. b 값과 -1을 비교
+      // 3. 반복문 실행
+      System.out.printf("%02x ", b);
     }
 
     in.close();

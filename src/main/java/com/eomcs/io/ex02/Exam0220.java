@@ -15,7 +15,7 @@ public class Exam0220 {
     byte[] buf = new byte[100];
 
     // read(byte[])
-    // - 버퍼가 꽉 찰 때까지 읽는다.
+    // - 버퍼가 꽉 찰 때까지 읽는다. // 버퍼가 꽉 차거나 더이상 데이터가 없으면 끝
     // - 물론 버퍼 크기보다 파일의 데이터가 적으면 파일을 모두 읽어 버퍼에 저장한다.
     // - 리턴 값은 읽은 바이트의 개수이다.
     // read(byte[], 저장할 위치, 저장하기를 희망하는 개수)
@@ -28,7 +28,7 @@ public class Exam0220 {
     System.out.printf("읽은 바이트 수: %d\n", count);
 
     for (int i = 0; i < count; i++)
-      System.out.printf("%x ", buf[i]);
+      System.out.printf("%02x ", buf[i]);
 
     System.out.println();
   }

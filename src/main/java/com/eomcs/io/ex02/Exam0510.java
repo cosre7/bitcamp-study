@@ -28,16 +28,26 @@ public class Exam0510 {
     //      Linux/macOS => UTF-8
     // => OS에 상관없이 동일한 실행 결과를 얻고 싶다면, 다음과 같이 file.encoding 옵션을 붙여라
     //      $ java -Dfile.encoding=UTF-8 -cp bin/main .....
+    // -Dfile.encoding=UTF-8: JVM 아규먼트
+    // bin/main .....: 애플리케이션 아규먼트
+    //
     // => 또는 getBytes() 호출할 때 인코딩할 문자집합을 지정하라.
     //      str.getBytes("UTF-8")
     //
+    // JVM이 문자를 입출력할 때 사용하는 기본 문자 집합이 무엇인지 알아본다.
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
     byte[] bytes = str.getBytes(); 
     // 이클립스: UCS2 ==> UTF-8
     // Windows: UCS2 ==> MS949
+    // java -cp bin/main com.eomcs.io.ex02.Exam0510 을 하면 ms949(euc-kr)
+    // -Dfile.encoding=EUC-KR
+    // java -Dfile.encoding=utf-8 -cp bin/main com.eomcs.io.ex02.Exam0510 로 하면 utf-8
+    // -Dfile.encoding=utf-8: utf-8의 형태로 만들라는 옵션을 추가하는 것
     // Linux: UCS2 ==> UTF-8
     // macOS: UCS2 ==> UTF-8
     //
+    // 인코딩 : 규칙에 따라 값을 변환시키는 것
+
     for (byte b : bytes) {
       System.out.printf("%x ", b);
     }

@@ -13,7 +13,7 @@ public class Exam0310 {
     // write(byte[]) : 배열의 값 전체를 출력한다.
     // write(byte[], 시작인덱스, 출력개수) : 시작 위치부터 지정된 개수를 출력한다.
     //
-    out.write(bytes, 2, 3); // 2번 데이터부터 3 바이트를 출력한다.
+    out.write(bytes, 2, 3); // 2번 데이터(인덱스 기준)부터 3 바이트를 출력한다.
 
     out.close();
 

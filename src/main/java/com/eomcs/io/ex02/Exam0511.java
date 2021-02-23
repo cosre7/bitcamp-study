@@ -15,6 +15,7 @@ public class Exam0511 {
     // => MS949로 인코딩 하기
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
     byte[] bytes = str.getBytes("MS949"); // UCS2 ==> MS949
+    // byte[] bytes = str.getBytes("EUC-KR"); // 맥 사용자를 위한 배려
 
     for (byte b : bytes) {
       System.out.printf("%x ", b);
