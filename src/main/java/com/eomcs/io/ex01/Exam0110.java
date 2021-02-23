@@ -6,7 +6,7 @@ import java.io.File;
 public class Exam0110 {
 
   public static void main(String[] args) throws Exception {
-    // 원래는 main이 마지막 보루라서 throws Exception 을 안하지만
+    // 원래는 main이 마지막 보루이지만
     // 지금은 File I/O 공부가 목적이므로 던지자!
 
     // File 클래스
