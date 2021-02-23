@@ -21,7 +21,7 @@ public class Exam0710_01 {
     // ...
 
     File dir = new File(".");
-    System.out.println(dir.getCanonicalPath());
+    System.out.println(dir.getCanonicalPath()); // 최종 경로
     // C:\Users\pc\git\bitcamp-study
   }
 
