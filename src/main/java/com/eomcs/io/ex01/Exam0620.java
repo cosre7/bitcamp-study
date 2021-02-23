@@ -31,6 +31,7 @@ public class Exam0620 {
     JavaFilter javaFilter = new JavaFilter();
 
     // 2) 필터를 사용하여 디렉토리의 목록을 가져오기
+    // String이 아닌 File의 배열로 받는다.
     File[] files = dir.listFiles(javaFilter);
 
     for (File file : files) {
