@@ -12,6 +12,7 @@ public class Exam0112 {
     //    UCS2 문자열을 해당 문자집합으로 인코딩 한다.
     Charset charset = Charset.forName("UTF-16BE");
     FileWriter out = new FileWriter("temp/test2.txt", charset);
+    // charset으로 지정하면 맥, 윈도우 상관없이 같은 결과를 출력할 수 있다.
 
     // 현재 JVM 환경 변수 'file.encoding' 값 알아내기
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
@@ -20,6 +21,7 @@ public class Exam0112 {
     out.write(0x7a6bac00); 
     // - 앞의 2바이트(7a6b)는 버린다.
     // - 뒤의 2바이트(ac00)은 UTF-16BE(ac00) 코드 값으로 변환되어 파일에 출력된다.
+    // 위의 변환 과정은 자동으로 일어난다
 
     // UCS2에서 영어 'A'는 0041이다.
     out.write(0x7a5f0041);  // 

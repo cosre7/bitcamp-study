@@ -8,6 +8,7 @@ public class Exam0122 {
   public static void main(String[] args) throws Exception {
     // 1) 파일의 데이터를 읽을 객체를 준비한다. 
     FileReader in = new FileReader("sample/ms949.txt"); // 41 42 b0 a1 b0 a2
+    // charset을 ms949라고 알려주지 않았다. -> 잘못디코딩된다.
 
     // 2) 출력 스트림 객체를 생성할 때 파일의 문자 집합을 지정하지 않으면,
     //    JVM 환경 변수 'file.encoding'에 설정된 문자코드표에 따라 
@@ -32,7 +33,7 @@ public class Exam0122 {
     // 3) 읽기 도구를 닫는다.
     in.close();
 
-    System.out.printf("%x, %x, %x, %x\n", ch1, ch2, ch3, ch4);
+    System.out.printf("%04x, %04x, %04x, %04x\n", ch1, ch2, ch3, ch4);
   }
 }
 

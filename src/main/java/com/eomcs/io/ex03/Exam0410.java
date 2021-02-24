@@ -10,7 +10,7 @@ public class Exam0410 {
 
     String str = new String("AB가각");
 
-    out.write(str); 
+    out.write(str);  // utf-8로 출력
 
     out.close();
 

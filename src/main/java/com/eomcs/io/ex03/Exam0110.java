@@ -7,7 +7,7 @@ public class Exam0110 {
   public static void main(String[] args) throws Exception {
 
     // JVM의 문자열을 파일로 출력할 때
-    // FileOutputStream 과 같은 바이트 스트림 클래스를 사용하면
+    // FileOutputStream 과 같은 바이트 스트링 클래스를 사용하면
     // 문자집합을 지정해야 하는 번거로움이 있었다.
     // => 이런 번거로움을 해결하기 위해 만든 스트림 클래스가 있으니,
     //    문자 스트림 클래스이다.
@@ -67,8 +67,10 @@ public class Exam0110 {
 
     // 현재 JVM 환경 변수 'file.encoding' 값 알아내기
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
+    // getProperty : JVM 환경변수 알아보기
+    // file.encoding=UTF-8 : 현재 이클립스 상에서 JVM 환경변수 'file.ecoding은 utf-8이다.
 
-    // => 이 예제를 이클립스에서 실행한다면,
+    // => 이 예제를 이클립스에서 실행한다면, // 인코딩이 자동으로 실행되는 과정
     // 앞의 2바이트는 버리고,
     // 뒤의 2바이트(UCS2)를 UTF-8 코드표에 따라
     // 1 ~ 4 바이트 값으로 변환하여 파일에 쓴다.
@@ -78,9 +80,12 @@ public class Exam0110 {
     //    콘솔창에서 위 옵션 없이 직접 이 클래스를 실행하라.
     //
     // UCS2에서 한글 '가'는 ac00이다.
-    out.write(0x7a6bac00);
+    out.write(0x7a6bac00); // 4바이트(int)를 담아서 2바이트를 사용한다.
+    // FileOutputStream 에서는 1바이트 -> 바이트 단위이기 때문
+    // FileWriter 에서는 문자단위 -> 2바이트
     // - 앞의 2바이트(7a6b)는 버린다.
     // - 뒤의 2바이트(ac00)은 UTF-8(eab080) 코드 값으로 변환되어 파일에 출력된다.
+    // - 콘솔창 MS949(B0A1)
 
     // UCS2에서 영어 A는 0041이다.
     // 출력하면, UTF-8 코드 값(41)이 파일에 출력된다.
