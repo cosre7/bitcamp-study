@@ -9,16 +9,26 @@ public class Exam0521 {
     // JVM 환경 변수 'file.encoding' 값
     System.out.printf("file.encoding=%s\n", System.getProperty("file.encoding"));
 
-    FileInputStream in = new FileInputStream("sample/utf8.txt");
+    FileInputStream in = new FileInputStream("sample/utf8.txt"); // utf8 형태로 AB가각 저장중
 
     // 파일의 데이터를 한 번에 읽어보자.
-    byte[] buf = new byte[1000]; 
-    int count = in.read(buf); // <== 41 42 ea b0 80 ea b0 81 (AB가각)
+    byte[] buf = new byte[1000]; // 넉넉하게 빈 배열 준비
+    int count = in.read(buf); // <== 41 42 ea b0 80 ea b0 81 (AB가각) // 읽은만큼 배열 채우기(8개)
 
     in.close();
 
+    // 읽은 바이트 수를 출력해보자.
+    System.out.printf("읽은 바이트 수: %d\n", count);
+
     // 읽은 바이트를 String 객체로 만들어보자.
-    String str = new String(buf, 0, count); // => 바이트가 어떤 문자 집합으로 인코딩 되었는지 알려주지 않는다면?
+    // - 바이트 배열에 저장된 문자 코드를 
+    //   JVM이 사용하는 문자 집합(UCS2 = UTF16BE)의 코드 값으로 변환한다.
+    // - 바이트 배열에 들어있는 코드 값이 어떤 문자 집합의 값인지 알려주지 않는다면
+    //   JVM 환경 변수 file.encoding에 설정된 문자 집합으로 가정하고 변환을 수행한다.
+    String str = new String(buf, 0, count); // 0~8까지 읽어라 
+    // String을 쓰면 utf16으로 바뀐다.
+    // java에서 사용하는 코드는 원래 utf16이기 때문
+
     System.out.println(str);
 
     // 바이트가 어떤 문자 집합으로 인코딩 되었는지 알려주지 않는다면?
@@ -34,7 +44,7 @@ public class Exam0521 {
     //
     // 2) Windows 콘솔에서 실행 => 실패!
     // - JVM을 실행할 때 file.encoding을 설정하지 않으면 
-    //   OS의 기본 문자집합으로 설정한다.
+    //   OS의 기본 문자집합으로 설정한다. // 원래는 utf8인데 ms949라고 착각하고 진행
     // - Windows의 기본 문자집합은 MS949 이다.
     // - 따라서 file.encoding 값은 MS949가 된다.
     // - 바이트 배열은 UTF-8로 인코딩 되었는데, 
@@ -44,6 +54,7 @@ public class Exam0521 {
     //   JVM을 실행할 때 file.encoding 옵션에 정확하게 해당 파일의 인코딩을 설정하라.
     //   즉 utf8.txt 파일은 UTF-8로 인코딩 되었기 때문에 
     //     '-Dfile.encoding=UTF-8' 옵션을 붙여서 실행해야 UCS2로 정상 변환된다.
+    //     'java -Dfile.encoding=utf8 -cp bin/main com.eomcs.io.ex02.Exam0521'
     //
     // 3) Linux/macOS 콘솔에서 실행 => 성공!
     // - Linux와 macOS의 기본 문자 집합은 UTF-8이다. 
