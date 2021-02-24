@@ -10,14 +10,14 @@ public class Exam0110 {
 
     int b;
 
-    long startTime = System.currentTimeMillis(); // 밀리초
+    long startTime = System.currentTimeMillis(); // 밀리초 //시작시간 측정
 
     int callCount = 0;
     while ((b = in.read()) != -1) {
       callCount++; // 파일을 끝까지 읽는다.
     }
 
-    long endTime = System.currentTimeMillis();
+    long endTime = System.currentTimeMillis(); // 끝시간 측정
 
     System.out.println(endTime - startTime);
     System.out.println(callCount);

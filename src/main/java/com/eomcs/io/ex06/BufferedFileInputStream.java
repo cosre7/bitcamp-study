@@ -14,11 +14,11 @@ public class BufferedFileInputStream extends FileInputStream {
 
   @Override
   public int read() throws IOException {
-    if (cursor == size) { // 버퍼에 저장되어 있는 데이터를 모두 읽었다는 의미
+    if (cursor == size) { // 버퍼에 저장되어 있는 데이터를 모두 읽었다는 의미 // byte 배열에 아무것도 없다
       if ((size = super.read(buf)) == -1) { // 파일에서 데이터를 읽으려 했는데 데이터가 없다.
         return -1;
       }
-      cursor = 0;
+      cursor = 0; // 배열의 0번부터 읽기 위함
     }
     return buf[cursor++] & 0x000000ff;
   }
