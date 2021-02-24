@@ -16,7 +16,8 @@ public class Exam0110 {
     // 인스턴스의 값을 출력하라!
     // 1) 이름 출력 
     byte[] bytes = member.name.getBytes("UTF-8");
-    out.write(bytes.length); // 1 바이트
+    out.write(bytes.length); // 1 바이트 
+    // 출력이유? -> 출력 후에 읽을 때 어디까지가 문자열인지 쉽게 확인하기 위해
     out.write(bytes); // 문자열 바이트 
 
     // 2) 나이 출력 (4바이트)
