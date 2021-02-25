@@ -1,7 +1,6 @@
 // 인스턴스 입출력 - 'transient' modifier
 package com.eomcs.io.ex11.e;
 
-import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
@@ -9,18 +8,20 @@ public class Exam0520 {
 
   public static void main(String[] args) throws Exception {
     FileInputStream fileIn = new FileInputStream("temp/score.data");
-    BufferedInputStream bufIn = new BufferedInputStream(fileIn);
-    ObjectInputStream in = new ObjectInputStream(bufIn);
+    ObjectInputStream in = new ObjectInputStream(fileIn);
 
     Score s = (Score) in.readObject();
     // 주의!
     // => deserialize를 통해 인스턴스가 생성될 때는 생성자가 호출되지 않는다.
     in.close();
 
-    // => transient 변수의 값은 출력되지 않았기 때문에 읽을 수 없다.
+    // 1. 왜곡된 데이터 -> 왜곡된 상태로 출력이 된다.
+    // 2. => transient 변수의 값은 출력되지 않았기 때문에 읽을 수 없다.
     System.out.println(s);
 
-    // => transient 값은 인스턴스를 준비한 후 별도의 메서드를 통해 다시 계산해야 한다.
+    // 1. 왜곡된 데이터가 다시 계산된다.
+    // 2. => transient 값은 인스턴스를 준비한 후 별도의 메서드를 통해 다시 계산해야 한다.
+    //      받는 곳에서 계산해서 사용해야 한다.
     s.compute();
     System.out.println(s);
 
