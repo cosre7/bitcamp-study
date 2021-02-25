@@ -6,13 +6,13 @@ import java.io.FileOutputStream;
 public class Exam0410 {
 
   public static void main(String[] args) throws Exception {
+    // 순서는 반드시 file -> buffer -> data
 
     FileOutputStream fileOut = new FileOutputStream("temp/test7.data");
 
     // 데코레이터 설계 기법의 장점은
     // 다음과 같이 필요한 기능을 쉽게 삽입할 수 있다는 것이다.
     BufferedOutputStream bufOut = new BufferedOutputStream(fileOut);
-
     DataOutputStream out = new DataOutputStream(bufOut);
 
     Member member = new Member();
@@ -22,7 +22,7 @@ public class Exam0410 {
 
     long start = System.currentTimeMillis();
 
-    for (int i = 0; i < 100000; i++) {
+    for (int i = 0; i < 1000000; i++) {
       out.writeUTF(member.name);
       out.writeInt(member.age);
       out.writeBoolean(member.gender);
