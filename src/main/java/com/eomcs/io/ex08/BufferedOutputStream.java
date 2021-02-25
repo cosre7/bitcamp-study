@@ -9,7 +9,7 @@ public class BufferedOutputStream {
   byte[] buf = new byte[8196];
   int cursor;
 
-  public BufferedOutputStream(OutputStream out) {
+  public BufferedOutputStream(OutputStream out) { // 생성자를 사용해서 실제 일을 할 OutputStream을 받는다.
     this.out = out;
   }
 

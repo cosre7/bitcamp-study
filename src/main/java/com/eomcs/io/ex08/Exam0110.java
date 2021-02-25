@@ -7,14 +7,16 @@ public class Exam0110 {
 
   public static void main(String[] args) throws Exception {
 
-    // 실제 파일에 출력을 수행하는 객체를 준비한다.
+    // 실제 파일을 읽는 일을 수행하는 객체를 준비한다. // 실제 데이터를 다룰 객체
     FileInputStream in = new FileInputStream("temp/jls11.pdf");
+    // 로버트 다우니 주니어
 
     // 기존의 FileInputStream에 버퍼 기능을 덧붙이기 위해서
     // 상속 대신 포함하는 방식을 사용한다.
     // 다음 BufferedInputStream 은 FileInputStream을 포함한다.
-    // 즉 파일에서 데이터를 읽을 때 FileInputStream을 사용한다.
+    // 즉 파일에서 데이터를 읽을 때 FileInputStream을 (내부적으로)사용한다.
     BufferedInputStream in2 = new BufferedInputStream(in);
+    // 아이언맨
 
     int b;
 

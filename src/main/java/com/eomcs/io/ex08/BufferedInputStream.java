@@ -11,17 +11,20 @@ public class BufferedInputStream {
   int cursor; // 바이트 읽은 배열의 위치
 
   public BufferedInputStream(InputStream in) {
+    // InputStream 추상클래스를 구현한 클래스의 인스턴스를 받겠다는 의미
+    // => 서브 클래스의 인스턴스를 받겠다는 뜻 (예: FileInputStream, ByteArrayInputStream ... )
+    // InputStream 추상클래스는 인스턴스를 만들 수 없다.
     this.in = in;
   }
 
-  public int read() throws IOException {
+  public int read() throws IOException { 
     if (cursor == size) { // 버퍼에 저장되어 있는 데이터를 모두 읽었다는 의미
       if ((size = in.read(buf)) == -1) { // 파일에서 데이터를 읽으려 했는데 데이터가 없다.
         return -1;
       }
       cursor = 0;
     }
-    return buf[cursor++] & 0x000000ff;
+    return buf[cursor++] & 0x000000ff; // 버퍼에 왕창 읽어놓고 1개 리턴
   }
 
   public int read(byte[] buf) throws IOException {

@@ -15,7 +15,7 @@ public class DataOutputStream {
     out.write(b);
   }
 
-  public void writeUTF(String str) throws Exception {
+  public void writeUTF(String str) throws Exception { // 중간에서 가공만
     byte[] bytes = str.getBytes("UTF-8");
     out.write(bytes.length);
     out.write(bytes);
