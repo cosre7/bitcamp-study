@@ -33,7 +33,7 @@ public class Test04_2 {
       // 저장한 인스턴스 필드 값을 그대로 읽을 것이기 때문에 
       // sum과 aver 필드 값도 그대로 읽을 것이다.
       // 따라서 compute()는 따로 호출할 필요가 없다.
-      //score.compute();
+      //score.compute(); -> score 기본 생성자가 출력되지 않는다.
       students.add(score);
     }
 

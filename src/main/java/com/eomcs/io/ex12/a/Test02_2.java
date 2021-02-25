@@ -13,17 +13,21 @@ public class Test02_2 {
     // => java.io.BufferedInputStream 클래스를 사용하라.
     // => java.io.DataInputStream 클래스를 사용하라.
     //
-    Score[] students = null;
 
     FileInputStream in0 = new FileInputStream("temp/score.data");
     BufferedInputStream in1 = new BufferedInputStream(in0);
     DataInputStream in = new DataInputStream(in1);
 
     int len = in.readInt();
-    students = new Score[len];
+    Score[] students = new Score[len];
 
     for (int i = 0; i < students.length; i++) {
-      Score s = new Score();
+      Score s = new Score(); // 인스턴스가 여러개 = 메모리가 여러개 => 반복문 돌 때 마다 인스턴스 만드는 것
+      // 하나의 인스턴스에 하나의 성적 정보를 담는 것
+      // => 인스턴스를 여러개 만들어서 여러개 성적 정보를 받아야 한다.
+      // 만약 인스턴스를 하나만 만들고난 후 성적 정보를 아무리 많이 받아봤자
+      // 마지막 성적 정보만 담긴다.
+      // => 반복문으로 같이 돌면서 만들어져야 한다.
       s.setName(in.readUTF());
       s.setKor(in.readInt());
       s.setEng(in.readInt());
