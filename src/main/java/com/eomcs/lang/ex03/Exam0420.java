@@ -66,6 +66,7 @@ public class Exam0420 {
 
     //println()에 전달하는 값이 일반적인 수가 아니라 문자 코드임을 지정해야 한다.
     //숫자 앞에 (char) 를 붙여 이 숫자가 평범한 숫자가 아니라 문자의 UCS-2 코드 값임을 알려줘라.
+    // (char)로 형변환해주는 것
     //  (char)문자코드
     System.out.println((char)65);
     // A 출력
