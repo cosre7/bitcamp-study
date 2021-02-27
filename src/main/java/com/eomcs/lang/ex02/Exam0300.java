@@ -20,7 +20,7 @@ public class Exam0300 {
   public static void main(String[] args) {
     System.out.println("애노테이션");
   }
-  
+
   //## @Override 
   //- 수퍼 클래스에서 상속 받은 멤버를 재정의 한다는 것을 컴파일러에게 알린다.
   //- 컴파일러는 오버라이딩 규칙을 준수하는지 검사한다.
@@ -33,7 +33,7 @@ public class Exam0300 {
 }
 
 //## 실습1 : 컴파일하기
-//- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/lang/ex02/Exam3.java
+//- $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/lang/ex02/Exam0300.java
 //- 오류없이 정상적으로 컴파일 된다.
 //
 //## 실습2 : @Override 애노테이션의 역할을 이해하기 I
