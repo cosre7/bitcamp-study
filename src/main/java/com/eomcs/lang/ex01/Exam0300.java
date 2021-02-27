@@ -21,7 +21,8 @@ class Exam0300 {
 //## 실습
 //1) 컴파일하기
 //- $ javac -encoding [문자집합] [소스파일명]
-//- 예) $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/lang/ex01/Exam3.java
+//- 예) $ javac -d bin/main -encoding UTF-8 src/main/java/com/eomcs/lang/ex01/Exam0300.java
+// -> utf-8 형식으로 Exam0300 소스파일을 인코딩하겠다는 뜻
 //
 //2) 실행하기
-//- $ java -cp bin/main com.eomcs.lang.ex01.Exam3
+//- $ java -cp bin/main com.eomcs.lang.ex01.Exam0300
