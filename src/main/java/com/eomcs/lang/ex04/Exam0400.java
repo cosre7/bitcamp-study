@@ -5,9 +5,9 @@ import java.sql.Date;
 //# 변수의 종류
 //- 자바 원시 타입의 값을 저장하는 변수와 메모리 주소를 저장하는 변수가 있다.
 //- 자바 원시 타입 변수(primitive variable)
-//    정수, 부동소수점, 논리, 문자코드의 값을
+//    정수, 부동소수점, 논리, 문자코드의 값을 저장하는 데이터 타입
 //- 레퍼런스 변수(reference variable)
-//    자바 원시 타입의 값을 제외한 모든 값
+//    자바 원시 타입의 값을 제외한 모든 값을 저장하는 데이터 타입
 //
 public class Exam0400 {
   public static void main(String[] args) {
