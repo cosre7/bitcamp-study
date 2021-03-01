@@ -21,5 +21,6 @@ public class Exam0432 {
     System.out.println(c1);
     System.out.println(c2);
     System.out.println(c3);
+    // 출력결과 : 모두 A
   }
 }
