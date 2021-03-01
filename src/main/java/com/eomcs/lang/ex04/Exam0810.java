@@ -12,6 +12,7 @@ public class Exam0810 {
   //static int a; // 컴파일 오류!
   //int b; // 컴파일 오류!
   //static int b;  // 컴파일 오류!
+  int c; // 다른 이름의 변수는 가능
 
   public static void main(String[] args/*로컬변수=파라미터*/) {
     // 그러나 메서스 블록에서는 클래스에 선언된 변수의 이름과 
