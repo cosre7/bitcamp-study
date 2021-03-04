@@ -8,6 +8,11 @@ import java.util.Scanner;
 
 public class Client0130 {
   public static void main(String[] args) {
+    // 룰
+    // 4byte를 보낸다 -> 4바이트를 받는다
+    // 2바이트를 보낸다 -> 2바이트를 받는다
+    // 데코레이터는 알아서들
+    // 하지만 개성 살리지 말고 그냥 같이가자
 
     try (Scanner keyScan = new Scanner(System.in);
         Socket socket = new Socket("localhost", 8888);
