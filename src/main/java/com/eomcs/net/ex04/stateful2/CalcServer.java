@@ -13,12 +13,11 @@ public class CalcServer {
     ServerSocket ss = new ServerSocket(8888);
 
     while (true) {
-      Socket socket = ss.accept();
       // stateful을 사용할 때 이점:
       // => 연결되어 있는 동안 클라이언트의 작업 결과를 계속 유지할 수 있다.
-      try {
+      try (Socket socket = ss.accept()) {
         processRequest(socket);
-      } catch (Exception e) {
+      } catch (Exception e) { 
         System.out.println("클라이언트 요청 처리 중 오류 발생!");
         System.out.println("다음 클라이언트의 요청을 처리합니다.");
       }
@@ -30,7 +29,7 @@ public class CalcServer {
     try (Socket socket2 = socket;
         DataInputStream in = new DataInputStream(socket.getInputStream());
         PrintStream out = new PrintStream(socket.getOutputStream());) {
-
+      // PrintWriter -> out.flush 반드시 필요!
       // 작업 결과를 유지할 변수
       int result = 0;
 
@@ -53,6 +52,9 @@ public class CalcServer {
             break;
           case "quit":
             break loop;
+          default:
+            out.println("해당 연산을 지원하지 않습니다.");
+            continue;
         }
 
         out.printf("계산 결과: %d\n", result);
