@@ -39,7 +39,7 @@ public class CalcServer {
 
       // 클라이언트를 구분하기 위한 아이디
       // => 0: 아직 클라이언트 아이디가 없다는 의미
-      // => x: 서버가 클라이언트에게 아이디를 부여했다는 의미
+      // => x(0이 아닌 값): 서버가 클라이언트에게 아이디를 부여했다는 의미
       long clientId = in.readLong();
 
       // 연산자와 값을 입력 받는다.
@@ -47,18 +47,22 @@ public class CalcServer {
       int value = in.readInt();
 
       // 클라이언트를 위한 기존 값 꺼내기
-      Integer obj = resultMap.get(clientId);
+      Integer obj = resultMap.get(clientId); // 기존에 값이 없으면 null이 리턴될 것
       int result = 0;
 
       if (obj != null) {
         System.out.printf("%d 기존 고객 요청 처리!\n", clientId);
         result = obj; // auto-unboxing
       } else {
-        // 해당 클라이언트가 방문한적이 없다면, 새 클라이언트 아이디를 발급한다.
+        // 맵에 해당 클라이언트 ID로 저장된 값이 없다는 것은 
+        // 한번도 서버에 접속한 적이 없다는 의미다.
+        // 따라서 새 클라이언트 아이디를 발급한다.
+        // => 예제를 간단히 하기 위해 현재 실행 시점의 밀리초를 사용한다.
         clientId = System.currentTimeMillis();
         System.out.printf("%d 신규 고객 요청 처리!\n", clientId);
       }
 
+      String message = null;
       switch (op) {
         case "+":
           result += value;
@@ -72,9 +76,12 @@ public class CalcServer {
         case "/":
           result /= value;
           break;
+        default:
+          message = "해당 연산을 지원하지 않습니다.";
       }
 
       // 계산 결과를 resultMap에 보관한다.
+      // 결과를 clientId로 구분하여 저장한다.
       resultMap.put(clientId, result);
 
       // 클라이언트로 응답할 때 항상 클라이언트 아이디와 결과를 출력한다.
@@ -82,10 +89,11 @@ public class CalcServer {
       out.writeLong(clientId);
 
       // => 계산 결과 출력
-      out.writeInt(result);
-
+      if (message == null) {
+        message = String.format("계산 결과: %d", result);
+      }
+      out.writeUTF(message);
       out.flush();
-
     }
   }
 }

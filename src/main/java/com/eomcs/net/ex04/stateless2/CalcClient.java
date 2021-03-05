@@ -31,14 +31,13 @@ public class CalcClient {
         // => 서버에 연산자와 값을 보낸다.
         out.writeUTF(op);
         out.writeInt(value);
-        out.flush();
+        out.flush(); // 안해도 되지만 그냥 한다.
 
         // => 서버에서 보낸 클라이언트 아이디를 읽는다.
         clientId = in.readLong();
 
         // => 서버에서 보낸 결과를 읽는다.
-        int result = in.readInt();
-        System.out.printf("계산 결과: %d\n", result);
+        System.out.println(in.readUTF());
 
       } catch (Exception e) {
         System.out.println("서버와 통신 중 오류 발생!");
