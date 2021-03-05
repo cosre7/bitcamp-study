@@ -76,6 +76,9 @@ public class Client0210 {
 
         System.out.println("서버와 연결 끊음!");
 
+        if (name.equals("stop"))
+          break; // while문을 나간다 (가장 가까운 while문)
+
       } catch (Exception e) {
         e.printStackTrace();
       }
