@@ -12,6 +12,8 @@ public class Client0110 {
 
     Scanner in = new Scanner(socket.getInputStream());
     PrintStream out = new PrintStream(socket.getOutputStream());
+    // PrintStream = 바이트 스트림이므로 BufferedStream을 사용하지 않는 이상
+    // out.flush 필요없음
 
     out.println("Hello!");
     System.out.println("데이터 보냄!");

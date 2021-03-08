@@ -14,6 +14,8 @@ import java.net.InetAddress;
 public class Client0210 {
   public static void main(String[] args) throws Exception {
     // connectionless 방식으로 통신을 수행할 소켓 생성
+    // - 클라이언트 쪽은 포트 번호를 지정하지 않는다.
+    // - 물론 OS가 자동으로 부여할 것이다.
     DatagramSocket socket = new DatagramSocket();
 
     // 데이터를 받을 상대편 주소와 포트 번호
@@ -30,7 +32,8 @@ public class Client0210 {
     DatagramPacket packet = new DatagramPacket(//
         bytes, // 데이터가 저장된 바이트 배열
         bytes.length, // 전송할 데이터 개수
-        InetAddress.getByName(receiver), // 데이터를 받을 상대편 주소
+        InetAddress.getByName(receiver), // 데이터를 받을 상대편 주소 (InetAddress 사용)
+        // 바로 문자열 지정은 불가 ex) localhost, 192.168.0.67
         port // 포트번호
         );
 
@@ -44,6 +47,9 @@ public class Client0210 {
     // 상대편이 네트웍에 연결되었는지 따지지 않고 무조건 데이터를 보낸다.
     // 만약 상대편이 연결되어 있지 않다면, 보낸 데이터는 그 쪽 네트웍에서 버려진다.
     // => 데이터 송수신을 보장하지 않는다.
+    // 서버가 실행되기 전에 데이터를 보내면 그냥 버려진다. (운영체제가 버린다)
+    // 서버가 실행되고 나서 데이터를 보내야 제대로 보내진다.
+    // 데이터를 보내고 나서 서버를 실행해도 이미 데이터는 버려졌기 때문에 서버에선 확인불가
   }
 }
 

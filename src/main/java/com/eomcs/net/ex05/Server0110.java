@@ -6,7 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-// 연결지향(connection oriented)
+// 연결지향(connection oriented) -> stateFul, stateLess 모두 연결 후에 통신한다.
 // => 연결 후에 데이터를 송수신 하기 때문에 데이터 송수신에 대한 신뢰를 보장한다.
 // => TCP 통신 방법이 전형적인 예이다.
 //    예) FTP, Telnet, SMTP, POP3, HTTP 등 
@@ -18,6 +18,7 @@ public class Server0110 {
     System.out.println("서버 실행 중...");
     ServerSocket ss = new ServerSocket(8888);
 
+    // 그냥 단계별로 보기 위해 넣는 코드
     System.out.println("엔터를 치면 대기열에서 기다리고 있는 클라이언트의 소캣을 생성한다.>");
     keyboardScanner.nextLine();
 
