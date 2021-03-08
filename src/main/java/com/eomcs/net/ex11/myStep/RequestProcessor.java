@@ -8,7 +8,7 @@ import java.net.Socket;
 public class RequestProcessor {
   Socket socket;
 
-  public RequestProcessor(Socket socket) {
+  public void setSocket(Socket socket) {
     this.socket = socket;
   }
 
