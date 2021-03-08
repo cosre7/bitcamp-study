@@ -1,5 +1,6 @@
 // 계산기 서버 만들기 - 3단계: 안내 메시지 전송 코드를 별도의 메서드로 분리한다.
 // - 클라이언트가 접속했을 때 안내하는 문구를 보내는 코드를 별도의 메서드로 분리한다.
+// - 리팩토링
 package com.eomcs.net.ex11.step03;
 
 import java.io.BufferedReader;

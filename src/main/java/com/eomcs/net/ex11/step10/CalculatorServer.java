@@ -13,8 +13,8 @@ public class CalculatorServer {
       RequestProcessor requestProcessor = new RequestProcessor();
 
       while (true) {
-        requestProcessor.setSocket(serverSocket.accept());
-        requestProcessor.service();
+        requestProcessor.setSocket(serverSocket.accept()); // 바뀐부분
+        requestProcessor.service(); // 바뀐부분
         // 현재 방식의 문제점?
         // - 현재 작업 중인 클라이언트와의 연결이 끝날 때까지 
         //   다른 클라이언트는 대기열에서 기다려야 한다.

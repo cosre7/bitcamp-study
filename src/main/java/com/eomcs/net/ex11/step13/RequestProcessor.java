@@ -10,6 +10,7 @@ import java.net.Socket;
 // - 해당 코드를 main 실행과 분리하여 실행한다.
 // - HTTP 요청에 대해 HTTP 응답을 수행한다.
 //
+// 클라이언트 => 웹 브라우저
 public class RequestProcessor extends Thread {
   Socket socket;
 
@@ -28,7 +29,8 @@ public class RequestProcessor extends Thread {
 
       // 나머지 요청과 관련된 헤더 정보(부가 정보)는 현재는 사용할 일이 없기 때문에 버린다.
       while (true) {
-        if (in.readLine().length() == 0) {
+        // 빈 줄을 읽을 때 까지 
+        if (in.readLine().length() == 0) { // 빈 줄
           break;
         }
       }
@@ -45,7 +47,8 @@ public class RequestProcessor extends Thread {
       // 웹브라우저가 보낸 request line에서 데이터를 추출한다.
       //    예) "GET /plus?a=100&b=200 HTTP/1.1"
       String[] values = request.split(" ")[1].split("\\?"); // ["/plus", "a=100&b=200"]
-
+      // split(" ") 띄어쓰기를 기준으로 자른다.
+      // split("\\?") ?를 기준으로 자른다.
       String op = getOperator(values[0]); // "/plus", "/multiple" 등
 
       String[] parameters = values[1].split("&"); // "a=100&b=200" ==> ["a=100", "b=200"]
@@ -59,6 +62,7 @@ public class RequestProcessor extends Thread {
           b = Integer.parseInt(kv[1]);
         }
       }
+      // 결론 -> 다 잘라서 a 에 100 b에 200 저장하자
 
       int result = 0;
 

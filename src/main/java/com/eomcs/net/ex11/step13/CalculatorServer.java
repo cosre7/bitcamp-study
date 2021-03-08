@@ -7,6 +7,8 @@
 //
 package com.eomcs.net.ex11.step13;
 
+// java -Dfile.encoding=UTF-8 -cp bin/main com.eomcs.net.ex11.step13.CalculatorServer
+// 위 코드로 실행
 import java.net.ServerSocket;
 
 public class CalculatorServer {

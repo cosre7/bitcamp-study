@@ -9,6 +9,7 @@ import java.net.Socket;
 // - 소켓에 연결된 클라이언트 요청을 처리한다.
 // - 해당 코드를 main 실행과 분리하여 실행한다.
 // 
+// 스레드 적용
 public class RequestProcessor extends Thread {
   Socket socket;
 
@@ -46,10 +47,13 @@ public class RequestProcessor extends Thread {
       int result = 0;
 
       switch (op) {
-        case "+": result = a + b; Thread.sleep(10000); break;
+        case "+": result = a + b; break;
         case "-": result = a - b; break;
         case "*": result = a * b; break;
-        case "/": result = a / b; break;
+        case "/": 
+          result = a / b; 
+          Thread.sleep(20000); // 일부러 응답을 지연시킨다.
+          break;
         default:
           return String.format("%s 연산자를 지원하지 않습니다.", op);
       }

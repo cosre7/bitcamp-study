@@ -20,7 +20,7 @@ public class CalculatorServer {
         out.println("계산기 서버에 오신 걸 환영합니다!");
         out.println("계산식을 입력하세요!");
         out.println("예) 23 + 7");
-        out.flush();
+        out.flush(); // 클라이언트에게 출력하는게 있다 => 이왕이면 그냥 out.flush 하는걸 추천
       }
 
     } catch (Exception e) {
