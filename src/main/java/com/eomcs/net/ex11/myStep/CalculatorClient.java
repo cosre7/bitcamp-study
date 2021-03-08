@@ -17,13 +17,27 @@ public class CalculatorClient {
       receiveResponse(in);
 
       while (true) {
-        String input = keyboardScanner.nextLine();
+        String input = prompt(keyboardScanner);
+        if (input == null) {
+          continue;
+        }
         sendRequest(out, input);
         receiveResponse(in);
       }
     } catch (Exception e) {
       e.printStackTrace();
     }
+  }
+
+  static String prompt(Scanner keyboardScanner) {
+    System.out.print("계산식> ");
+    String input = keyboardScanner.nextLine();
+
+    if (input.split(" ").length != 3) {
+      System.out.println("입력 형식이 올바르지 않습니다. 예) 23 + 5");
+      return null;
+    }
+    return input;
   }
 
   static void sendRequest(PrintStream out, String message) throws Exception {
