@@ -20,6 +20,11 @@ public class CalculatorServer {
 
         while (true) {
           String request = in.readLine();
+          if (request.equalsIgnoreCase("quit")) {
+            sendResponse(out, "안녕히 가세요~!");
+            break;
+          }
+
           String message = compute(request);
           sendResponse(out, message);
         }

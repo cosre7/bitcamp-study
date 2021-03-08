@@ -23,6 +23,10 @@ public class CalculatorClient {
         }
         sendRequest(out, input);
         receiveResponse(in);
+
+        if (input.equalsIgnoreCase("quit")) {
+          break;
+        }
       }
     } catch (Exception e) {
       e.printStackTrace();
@@ -33,7 +37,10 @@ public class CalculatorClient {
     System.out.print("계산식> ");
     String input = keyboardScanner.nextLine();
 
-    if (input.split(" ").length != 3) {
+    if (input.equalsIgnoreCase("quit")) {
+      return input;
+
+    } else if (input.split(" ").length != 3) {
       System.out.println("입력 형식이 올바르지 않습니다. 예) 23 + 5");
       return null;
     }
