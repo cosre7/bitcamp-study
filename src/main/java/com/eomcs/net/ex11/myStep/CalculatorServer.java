@@ -20,14 +20,18 @@ public class CalculatorServer {
 
         while (true) {
           String request = in.readLine();
-          out.println(request);
-          out.println();
-          out.flush();
+          sendResponse(out, request);
         }
       }
     } catch (Exception e) {
       e.printStackTrace();
     }
+  }
+
+  static void sendResponse(PrintStream out, String message) {
+    out.println(message);
+    out.println();
+    out.flush();
   }
 
   static void sendIntroMessage(PrintStream out) throws Exception {

@@ -14,20 +14,23 @@ public class CalculatorClient {
         PrintStream out = new PrintStream(socket.getOutputStream());
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
-      readResponse(in);
+      receiveResponse(in);
 
       while (true) {
         String input = keyboardScanner.nextLine();
-        out.println(input);
-        out.flush();
-        readResponse(in);
+        sendRequest(out, input);
+        receiveResponse(in);
       }
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
-  static void readResponse(BufferedReader in) throws Exception {
+  static void sendRequest(PrintStream out, String message) throws Exception {
+    out.println(message);
+    out.flush();
+  }
+  static void receiveResponse(BufferedReader in) throws Exception {
     while (true) {
       String input = in.readLine();
       if (input.length() == 0) {
