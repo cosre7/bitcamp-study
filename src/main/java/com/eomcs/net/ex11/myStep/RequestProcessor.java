@@ -17,18 +17,7 @@ public class RequestProcessor {
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintStream out = new PrintStream(socket.getOutputStream());) {
 
-      sendIntroMessage(out);
-
-      while (true) {
-        String request = in.readLine();
-        if (request.equalsIgnoreCase("quit")) {
-          sendResponse(out, "안녕히 가세요~!");
-          break;
-        }
-
-        String message = compute(request);
-        sendResponse(out, message);
-      }
+      sendResponse(out, compute(in.readLine()));
     }
   }
 
@@ -58,15 +47,6 @@ public class RequestProcessor {
 
   private void sendResponse(PrintStream out, String message) {
     out.println(message);
-    out.println();
-    out.flush();
-  }
-
-  private void sendIntroMessage(PrintStream out) throws Exception {
-    out.println("[계산기 서비스]");
-    out.println("계산기 서버에 오신 것을 환영합니다!");
-    out.println("계산식을 입력하세요");
-    out.println("예) 23 + 7");
     out.println();
     out.flush();
   }

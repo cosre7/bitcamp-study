@@ -8,29 +8,30 @@ import java.util.Scanner;
 
 public class CalculatorClient {
   public static void main(String[] args) {
+    Scanner keyboardScanner = new Scanner(System.in);
 
-    try (Scanner keyboardScanner = new Scanner(System.in);
-        Socket socket = new Socket("localhost", 8888);
-        PrintStream out = new PrintStream(socket.getOutputStream());
-        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+    while (true) {
+      String input = prompt(keyboardScanner);
+      if (input == null) {
+        continue;
+      }
 
-      receiveResponse(in);
+      if (input.equalsIgnoreCase("quit")) {
+        break;
+      }
 
-      while (true) {
-        String input = prompt(keyboardScanner);
-        if (input == null) {
-          continue;
-        }
+      try (Socket socket = new Socket("localhost", 8888);
+          PrintStream out = new PrintStream(socket.getOutputStream());
+          BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+
         sendRequest(out, input);
         receiveResponse(in);
 
-        if (input.equalsIgnoreCase("quit")) {
-          break;
-        }
+      } catch (Exception e) {
+        e.printStackTrace();
       }
-    } catch (Exception e) {
-      e.printStackTrace();
     }
+    keyboardScanner.close();
   }
 
   static String prompt(Scanner keyboardScanner) {
