@@ -17,6 +17,13 @@ public class CalculatorServer {
           PrintStream out = new PrintStream(socket.getOutputStream());) {
 
         sendIntroMessage(out);
+
+        while (true) {
+          String request = in.readLine();
+          out.println(request);
+          out.println();
+          out.flush();
+        }
       }
     } catch (Exception e) {
       e.printStackTrace();
