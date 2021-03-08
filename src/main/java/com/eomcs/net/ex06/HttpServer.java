@@ -25,9 +25,9 @@ public class HttpServer {
 
       // 클라이언트가 보낸 데이터를 HTTP 요청 프로토콜에 맞춰 읽는다.
       while (true) {
-        String str = in.nextLine();
+        String str = in.nextLine(); // GET~~ , Host~~ 읽기
         System.out.println(str);
-        if (str.equals("")) // 빈 줄
+        if (str.equals("")) // 빈 줄 => \r\n 읽으면 끝
           break;
       }
 

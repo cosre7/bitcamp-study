@@ -33,7 +33,6 @@ public class CalculatorClient {
     } catch (Exception e) {
       e.printStackTrace();
     }
-
   }
 
   static String prompt(Scanner keyboardScanner) {
