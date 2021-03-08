@@ -5,19 +5,22 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 
-public class RequestProcessor {
+public class RequestProcessor extends Thread {
   Socket socket;
 
-  public void setSocket(Socket socket) {
+  public RequestProcessor(Socket socket) {
     this.socket = socket;
   }
 
-  public void service() throws Exception {
+  @Override
+  public void run() {
     try (Socket socket = this.socket;
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintStream out = new PrintStream(socket.getOutputStream());) {
 
       sendResponse(out, compute(in.readLine()));
+    } catch (Exception e) {
+      System.out.printf("클라이언트 요청 처리 중 오류 발생! - %s\n", e.getMessage());
     }
   }
 
