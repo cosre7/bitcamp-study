@@ -12,15 +12,20 @@ public class CalculatorClient {
         PrintStream out = new PrintStream(socket.getOutputStream());
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
-      while (true) {
-        String input = in.readLine();
-        if (input.length() == 0) {
-          break;
-        }
-        System.out.println(input);
-      }
+      readResponse(in);
+
     } catch (Exception e) {
       e.printStackTrace();
+    }
+  }
+
+  static void readResponse(BufferedReader in) throws Exception {
+    while (true) {
+      String input = in.readLine();
+      if (input.length() == 0) {
+        break;
+      }
+      System.out.println(input);
     }
   }
 }
