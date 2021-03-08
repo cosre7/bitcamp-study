@@ -16,9 +16,11 @@ public class CalculatorServer {
           BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
           PrintStream out = new PrintStream(socket.getOutputStream());) {
 
+        out.println("[계산기 서비스]");
         out.println("계산기 서버에 오신 것을 환영합니다!");
         out.println("계산식을 입력하세요");
         out.println("예) 23 + 7");
+        out.println();
         out.flush();
       }
     } catch (Exception e) {
