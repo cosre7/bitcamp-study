@@ -15,13 +15,17 @@ public class Exam0110 {
 
     // => URL 주소를 검증하고 준비한다.
     URL url = new URL("https://www.daum.net");
+    URL url2 = new URL("https://www.nis.go.kr:4016/main.do"); // 국정원
 
-    // => 서버와 연결하고 HTTP 요청을 수행한다.
-    // => 그런 후에 웹서버의 응답 데이터를 읽어들일 도구를 준비한다.
-    InputStream in = url.openStream();
+    // => 서버와 연결하고 HTTP 요청을 수행한다. // url.openStream()
+    // => 그런 후에 웹서버의 응답 데이터를 읽어들일 도구를 준비한다. // InputStream in
+    InputStream in = url.openStream(); // contents만 빼내서 준다
 
     // => 서버가 보낸 데이터를 한 줄씩 읽기 위해 데코레이터를 붙인다.
     BufferedReader in2 = new BufferedReader(new InputStreamReader(in));
+    // InputStream : 바이트스트림
+    // BufferedReader : 캐릭터스트림
+    // InputStreamReader : 어댑터
 
     while (true) {
       String str = in2.readLine();

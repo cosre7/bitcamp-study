@@ -15,17 +15,20 @@ public class Exam0210 {
     URL url = new URL("http://itempage3.auction.co.kr/DetailView.aspx?itemno=C204190906");
 
     // => URL 정보를 가지고 HTTP 요청을 수행할 객체를 얻는다.
-    URLConnection con = url.openConnection();
+    URLConnection con = url.openConnection(); // 아직은 서버와 연결한 것 아님
 
     // => 웹서버와 연결한 후 HTTP 요청한다.
-    con.connect();
+    con.connect(); // 이제 연결
 
-    // URL.openStream()을 사용하는 것 보다 이점?
+    // URL.openStream()을 사용하는 것 보다 이점? // 세부적인 헤더 정보를 알 수 있다.
+    // -> 추가적인 헤더 정보가 필요하면 connection, 필요 없으면 그냥 openStream
+    // 방법1.
     // - 응답 헤더의 다양한 값을 추출할 수 있다.
     System.out.printf("Content-Type: %s\n", con.getContentType());
     System.out.printf("Content-Length: %d\n", con.getContentLength());
     System.out.printf("Content-Encoding: %s\n", con.getContentEncoding());
 
+    // 방법2.
     // - 직접 헤더 이름을 사용해서 헤더 값을 추출할 수 있다.
     System.out.printf("Content-Type: %s\n", con.getHeaderField("Content-Type"));
     System.out.printf("Server: %s\n", con.getHeaderField("Server"));
