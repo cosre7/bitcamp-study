@@ -27,7 +27,7 @@ public class HttpServer {
       while (true) {
         String str = in.nextLine();
         System.out.println(str);
-        if (str.equals(""))
+        if (str.equals("")) // 빈 줄
           break;
       }
 
@@ -35,10 +35,10 @@ public class HttpServer {
       // => macOS에서 JVM을 실행할 때, println()은 문자열 뒤에 0a(LF) 코드만 붙인다.
       // => 이를 해결하려면, 다음과 같이 명확하게 CRLF 코드를 붙여라.
       //
-      out.print("HTTP/1.1 200 OK\r\n");
-      out.print("Content-Type: text/html; charset=UTF-8\r\n");
-      out.print("\r\n");
-      out.print("<html><body><h1>안녕!-강사</h1></body></html>\r\n");
+      out.print("HTTP/1.1 200 OK\r\n"); // status-line
+      out.print("Content-Type: text/html; charset=UTF-8\r\n"); // header
+      out.print("\r\n"); // 엔터
+      out.print("<html><body><h1>안녕!-박유진</h1></body></html>\r\n"); // message-body
 
       out.close();
       in.close();
