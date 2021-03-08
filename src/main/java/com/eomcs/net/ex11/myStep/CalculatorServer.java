@@ -35,22 +35,27 @@ public class CalculatorServer {
   }
 
   static String compute(String request) {
-    String[] values = request.split(" ");
+    try {
+      String[] values = request.split(" ");
 
-    int a = Integer.parseInt(values[0]);
-    String op = values[1];
-    int b = Integer.parseInt(values[2]);
-    int result = 0;
+      int a = Integer.parseInt(values[0]);
+      String op = values[1];
+      int b = Integer.parseInt(values[2]);
+      int result = 0;
 
-    switch (op) {
-      case "+": result = a + b; break;
-      case "-": result = a - b; break;
-      case "*": result = a * b; break;
-      case "/": result = a / b; break;
-      default:
-        return String.format("%s 연산자를 지원하지 않습니다.", op);
+      switch (op) {
+        case "+": result = a + b; break;
+        case "-": result = a - b; break;
+        case "*": result = a * b; break;
+        case "/": result = a / b; break;
+        default:
+          return String.format("%s 연산자를 지원하지 않습니다.", op);
+      }
+      return String.format("결과는 %d %s %d = %d 입니다.", a, op, b, result);
+
+    } catch (Exception e) {
+      return String.format("계산 중 오류 발생! - %s", e.getMessage());
     }
-    return String.format("결과는 %d %s %d = %d 입니다.", a, op, b, result);
   }
 
   static void sendResponse(PrintStream out, String message) {
