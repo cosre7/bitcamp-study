@@ -1,0 +1,16 @@
+package a;
+
+import java.util.Scanner;
+
+public class Baekjoon11022 {
+
+  public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int T = in.nextInt();
+    for (int i = 1; i <= T; i++) {
+      int a = in.nextInt();
+      int b = in.nextInt();
+      System.out.printf("Case #%d: %d + %d = %d\n", i, a, b, a+b);
+    }
+  }
+}
