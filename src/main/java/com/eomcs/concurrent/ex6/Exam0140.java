@@ -1,4 +1,4 @@
-// 스레드 재사용 - 4단계) wait()/notify() 사용
+// 스레드 재사용 - 4단계) wait()/notify() 사용 -> 실무에서 사용하는 방법
 package com.eomcs.concurrent.ex6;
 
 import java.util.Scanner;
