@@ -9,7 +9,8 @@ from room;
 select rno room_no, loc location, name
 from room;
 
-/* 라벨명에 공백을 넣고 싶으면 '' 안에 작성한다.*/
+/* 라벨명에 공백을 넣고 싶으면 '' 안에 작성한다. -> 그냥 하면 에러!*/
+-- 왠만하면 그냥 _ 쓰자
 select rno 'room no', loc location, name
 from room;
 
@@ -18,15 +19,18 @@ from room;
 select concat(name, '(', loc, ')')
 from room;
 
+-- 별명 붙이기
 select concat(name, '(', loc, ')') title
 from room;
 
 select count(*)
 from room;
 
+-- 별명 붙이기
 select count(*) cnt
 from room;
 
+-- room 테이블의 데이터 중 loc='서초'인 개수
 select count(*) cnt
 from room
 where loc='서초';

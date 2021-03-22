@@ -1,4 +1,4 @@
-/* 서브 쿼리
+/* 서브 쿼리 -> 단점: 속도가 느리다
 => 쿼리문 안에 쿼리문을 실행하는 기법
 => 성능 문제를 생각하면서 사용해야 한다.
 */
@@ -80,6 +80,41 @@ from lect_appl la
                 (select name from memb where mno=l.mno) as manager_name,
                 (select posi from mgr where mno=l.mno) as manager_posi
             from lect l) as lec on la.lno=lec.lno;
+
+/* lect_appl 테이블 대신에 서브 쿼리의 결과를 테이블로 사용할 수 있다. */
+
+select 
+    la2.lano,
+    la2.rdt,
+    la2.sname,
+    la2.work,
+    l2.titl,
+    l2.rname,
+    l2.mname,
+    l2.posi
+from (
+    select 
+        la.lano,
+        la.lno,
+        la.rdt,
+        m.name sname,
+        s.work
+    from lect_appl la
+        inner join memb m on la.mno=m.mno
+        inner join stnt s on la.mno=s.mno
+    ) la2 
+    inner join (
+        select 
+            l.lno, 
+            l.titl, 
+            r.name rname,
+            m.name mname,
+            mr.posi
+        from lect l
+            left outer join room r on l.rno=r.rno
+            left outer join memb m on l.mno=m.mno
+            left outer join mgr mr on l.mno=mr.mno
+) l2 on l2.lno=l2.lno;
 
 /* from 절에서 반복적으로 사용하는 서브 쿼리가 있다면,
  * 차라리 가상 테이블인 view로 정의해놓고 사용하는 것이 편하다.

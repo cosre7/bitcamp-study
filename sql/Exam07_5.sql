@@ -1,7 +1,7 @@
 /* 조인
 => 서로 관련된 테이블의 데이터를 연결하여 추출하는 방법
 => 기법
-1) CROSS 조인
+1) CROSS 조인 - 1:1 조인 (카티션 조인) => 기술면접 출제
 2) NATURAL 조인
 3) JOIN ~ ON
 4) OUTER JOIN
@@ -30,6 +30,7 @@ from memb, stnt;
          그 별명을 사용하여 컬럼을 지정하라. */
 select m.mno, name, s.mno, work, bank
 from memb m cross join stnt s;
+-- memb as m 도 가능
 
 /* 예전 문법 */
 select m.mno, name, s.mno, work, bank
@@ -46,7 +47,7 @@ from memb m, stnt s
 where m.mno=s.mno;
 
 /* natural join 의 문제점
- * 1) 두 테이블의 조인 기준이 되는 컬럼 이름이 다를 때 연결되지 못한다.
+ * 1) 두 테이블의 조인 기준이 되는 컬럼 이름이 다를 때 연결되지 못한다. ex) m.mno, s.sno  -> 예전문법으로는 가능
    2) 상관 없는 컬럼과 이름이 같을 때 잘못 연결된다.
    3) 같은 이름의 컬럼이 여러 개 있을 경우 잘못 연결된다.
         모든 컬럼의 값이 일치할 경우에만 연결되기 때문이다. */
@@ -56,6 +57,7 @@ where m.mno=s.mno;
    두 테이블의 데이터를 연결할 때 기준이 될 컬럼을 지정한다.*/
 select m.mno, name, s.mno, work, bank
 from memb m join stnt s using (mno);
+-- 같은 이름으로 조인되는 상태
 
 /* natural join 의 문제점 2
    => 두 테이블에 같은 이름의 컬럼이 없을 경우
@@ -68,6 +70,7 @@ from memb m join stnt s using (mno);
    각 테이블의 어떤 컬럼과 값을 비교할 것인지 지정하라!*/
 select m.mno, name, s.mno, work, bank
 from memb m inner join stnt s on m.mno=s.mno;
+-- ********************결론! 그냥 이거 쓰자**************
 
 /* inner는 생략 가능하다 */
 select m.mno, name, s.mno, work, bank
@@ -128,7 +131,7 @@ select
     r.rno,
     r.loc,
     r.name
-from lect l right outer join room r on l.rno=r.rno;
+from lect l left outer join room r on l.rno=r.rno;
 /* 왼쪽 테이블인 lect를 기준으로 room 데이터를 연결한다.
  * 만약 lect와 일치하는 데이터가 room에 없더라도
  * lect 데이터를 출력한다!
