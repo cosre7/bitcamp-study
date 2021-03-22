@@ -16,7 +16,7 @@ public class Baekjoon10818 {
     }
 
     in.close();
-    Arrays.sort(arr);;
+    Arrays.sort(arr);
     System.out.print(arr[0] + " " + arr[N - 1]);
   }
 }
