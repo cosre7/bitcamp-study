@@ -9,16 +9,21 @@ import java.sql.SQLException;
 // => 이 클래스는 JDBC API 규칙에 따라 작성되었다.
 // => 이 클래스는 JDBC Driver 파일(*.jar)에 들어 있다.
 // => 이 클래스를 사용하려면 먼저 이 JDBC Driver 파일을 다운로드 받아
-// 프로젝트의 CLASSPATH에 등록해야 한다.
-// => 절차
+//    프로젝트의 CLASSPATH에 등록해야 한다.
+// => 절차 (mariadb, oracle, ms-sql 다운로드)
 // 1) mvnrepository.com 또는 search.maven.org에서 mariadb jdbc driver를 검색한다.
+//    - mariadb, orache, ms-sql을 각각 검색해서 하나를 선택
+//    - 오른쪽의 gradle groovy 문장을 복사
 // 2) 라이브러리 정보를 build.gradle 파일에 설정한다.
-// 3) gradle을 이용하여 eclipse 설정 파일을 갱신한다.
+//    - dependencies 메서드 안에 붙여넣기
+// 3) gradle을 이용하여 eclipse 설정 파일을 갱신한다. (명령창 이용)
 //    > gradle eclipse
 //    - 다운로드 받지 않은 라이브러리가 있다면 자동으로 서버에서 받을 것이다.
 //    - 라이브러리 정보가 변경되었다면 해당 라이브러리를 서버에서 받을 것이다.
-// 4) 이클립스 프로젝트를 리프래시 한다.
+//    - 라이브러리 정보를 추가만 하는 것이기 때문에 gradle cleanEclipse 할 필요는 없다.
+// 4) 이클립스 프로젝트를 리프레시 한다.
 //    - 프로젝트에 mariadb jdbc driver 라이브러리가 추가되었는지 확인한다.
+//    - Referenced Libraries 폴더에 추가된다.
 //
 public class Exam0110 {
 
@@ -57,7 +62,7 @@ public class Exam0110 {
       // DriverManager에 등록된 Driver 인스턴스를 확인해보자!
       // => DriverManager.getDriver(jdbcUrl);
       // => jdbcUrl
-      // jdbc:[DBMS]://서버주소:포트번호/데이터베이스명
+      //    jdbc:[DBMS]://서버주소:포트번호/데이터베이스명
       // 마지막 부분의 //는 ms-sql의 경우 필수적으로 붙여야한다! 아니면 에러!!
       java.sql.Driver driver = DriverManager.getDriver("jdbc:mariadb://");
       System.out.println(driver);
