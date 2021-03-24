@@ -36,10 +36,11 @@ public class Exam0210 {
       // 제목? okok
       // 내용? test', view_count = 300, created_date = '2019-3-3
       //
+      // 번호? 7 or 1=1 => 전체가 true이기 때문에 모든 board의 제목과 내용이 바뀌어버린다.
       int count = stmt.executeUpdate( //
           "update x_board set title = '" + title + //
-              "', contents = '" + contents + //
-              "' where board_id = " + no);
+          "', contents = '" + contents + //
+          "' where board_id = " + no);
 
       // 위에서 사용자가 입력한 값을 가지고 SQL 문장을 만들면 다음과 같다.
       //
@@ -47,6 +48,7 @@ public class Exam0210 {
       // contents = 'test', view_count = 300, created_date = '2019-3-3'
       // where board_id = 1
       //
+      // => view_count와 created_date 조작
 
       if (count == 0) {
         System.out.println("해당 번호의 게시물이 존재하지 않습니다.");
