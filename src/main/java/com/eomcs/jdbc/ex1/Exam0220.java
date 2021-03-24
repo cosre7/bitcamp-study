@@ -5,8 +5,9 @@ import java.sql.DriverManager;
 
 public class Exam0220 {
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) throws Exception /*예외처리 고민하지말고 driver에 집중!*/{
 
+    // finally 언제 쓰고 있냐..
     // try-with-resources 문법을 사용하면
     // try 블록을 벗어날 때 close()가 자동 호출된다.
     //

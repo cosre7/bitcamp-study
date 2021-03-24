@@ -20,7 +20,7 @@ public class Exam0321 {
             rs.getInt(1), // board_id
             rs.getString(2), // title
             rs.getString(3), // contents
-            rs.getDate(4), // created_date
+            rs.getDate(4), // created_date // java.sql.date
             rs.getInt(5)); // view_count
 
         // getXxx():
