@@ -10,7 +10,7 @@ public class Exam0210 {
     java.sql.Connection con = null;
 
     try {
-      // JVM에서 jdbc driver 파일(.jar)을 디져서 java.sql.Driver를 구현한 클래스를
+      // JVM에서 jdbc driver 파일(.jar)을 뒤져서 java.sql.Driver를 구현한 클래스를
       // 자동으로 로딩하기 때문에,
       // 다음과 같이 명시적으로 로딩할 필요가 없다.
       // Class.forName("org.mariadb.jdbc.Driver"); // 굳이 적을 필요 없다. 있어도 그만 없어도 그만
