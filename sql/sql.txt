@@ -1,0 +1,261 @@
+<sql>
+select lano, lno, mno, rdt
+from lect_appl;
+
+select lano, titl, lect_appl.mno, rdt
+from lect_appl inner join lect on lect_appl.lno=lect.lno;
+
+select lano, titl, la.mno, rdt
+from lect_appl as la inner join lect as l on la.lno=l.lno;
+
+select lano, titl, m.name, rdt
+from lect_appl as la 
+    inner join lect as l on la.lno=l.lno
+    inner join memb as m on la.mno=m.mno;
+
+select lano, titl, m.name, work, rdt
+from lect_appl as la 
+    inner join lect as l on la.lno=l.lno
+    inner join memb as m on la.mno=m.mno
+    inner join stnt as s on la.mno=s.mno;
+
+select lano, titl, m.name, work, rdt, r.name
+from lect_appl as la 
+    inner join lect as l on la.lno=l.lno
+    inner join memb as m on la.mno=m.mno
+    inner join stnt as s on la.mno=s.mno
+    inner join room as r on l.rno=r.rno;
+
+select lano, titl, m.name, work, rdt, r.name
+from lect_appl as la 
+    inner join lect as l on la.lno=l.lno
+    inner join memb as m on la.mno=m.mno
+    inner join stnt as s on la.mno=s.mno
+    left outer join room as r on l.rno=r.rno;
+
+select lano, titl, m.name, work, rdt, r.name, m2.name
+from lect_appl as la 
+    inner join lect as l on la.lno=l.lno
+    inner join memb as m on la.mno=m.mno
+    inner join stnt as s on la.mno=s.mno
+    left outer join room as r on l.rno=r.rno
+    inner join memb as m2 on l.mno=m2.mno;
+
+select lano, titl, m.name, work, rdt, r.name, m2.name
+from lect_appl as la 
+    inner join lect as l on la.lno=l.lno
+    inner join memb as m on la.mno=m.mno
+    inner join stnt as s on la.mno=s.mno
+    left outer join room as r on l.rno=r.rno
+    left outer join memb as m2 on l.mno=m2.mno;
+
+select lano, titl, m.name, work, rdt, r.name, m2.name, mr.posi
+from lect_appl as la 
+    inner join lect as l on la.lno=l.lno
+    inner join memb as m on la.mno=m.mno
+    inner join stnt as s on la.mno=s.mno
+    left outer join room as r on l.rno=r.rno
+    left outer join memb as m2 on l.mno=m2.mno
+    inner join mgr as mr on l.mno=mr.mno;
+
+select lano, titl, m.name, work, rdt, r.name, m2.name, mr.posi
+from lect_appl as la 
+    inner join lect as l on la.lno=l.lno
+    inner join memb as m on la.mno=m.mno
+    inner join stnt as s on la.mno=s.mno
+    left outer join room as r on l.rno=r.rno
+    left outer join memb as m2 on l.mno=m2.mno
+    left outer join mgr as mr on l.mno=mr.mno;
+
+select lano, titl, m.name student_name, work, rdt, r.name room_name, m2.name manager_name, mr.posi
+from lect_appl as la 
+    inner join lect as l on la.lno=l.lno
+    inner join memb as m on la.mno=m.mno
+    inner join stnt as s on la.mno=s.mno
+    left outer join room as r on l.rno=r.rno
+    left outer join memb as m2 on l.mno=m2.mno
+    left outer join mgr as mr on l.mno=mr.mno;
+
+select
+    la.lano, 
+    la.rdt,
+    l.titl, 
+    m.name s_name, 
+    s.work, 
+    r.name r_name, 
+    m2.name m_name, 
+    mr.posi
+from lect_appl la 
+    inner join lect l on la.lno=l.lno
+    inner join memb m on la.mno=m.mno
+    inner join stnt s on la.mno=s.mno
+    left outer join room r on l.rno=r.rno
+    left outer join memb m2 on l.mno=m2.mno
+    left outer join mgr mr on l.mno=mr.mno;
+
+<서브 쿼리>
+select 
+    la.lano,
+    la.lno,
+    la.mno,
+    la.rdt
+from lect_appl la;
+
+select 
+    la.lano,
+    (select titl from lect where lno=la.lno) title,
+    la.mno,
+    la.rdt
+from lect_appl la;
+
+select 
+    la.lano,
+    (select titl from lect where lno=la.lno) title,
+    (select name from memb where mno=la.mno) sname,
+    la.rdt
+from lect_appl la;
+
+select 
+    la.lano,
+    la.rdt,
+    (select titl from lect where lno=la.lno) title,
+    (select name from memb where mno=la.mno) sname,
+    (select work from stnt where mno=la.mno) work,
+    (select name from room where rno=l.rno) rname
+from lect_appl la
+    inner join lect l on la.lno=l.lno;
+
+select 
+    la.lano,
+    la.rdt,
+    (select titl from lect where lno=la.lno) title,
+    (select name from memb where mno=la.mno) sname,
+    (select work from stnt where mno=la.mno) work,
+    (select name from room where rno=l.rno) rname,
+    (select name from memb where mno=l.mno) mname,
+    (select posi from mgr where mno=l.mno) posi
+from lect_appl la
+    inner join lect l on la.lno=l.lno;
+
+select 
+    la.lano,
+    la.rdt,
+    (select titl from lect where lno=la.lno) title,
+    (select name from memb where mno=la.mno) sname,
+    (select work from stnt where mno=la.mno) work,
+    (select name from room where rno=l.rno) rname,
+    (select name from memb where mno=l.mno) mname,
+    (select posi from mgr where mno=l.mno) posi
+from lect_appl la
+    inner join lect l on la.lno=l.lno;
+    
+<이런 선배도 있다>
+select l.lno, l.titl, r.name rname, l.mno
+from lect l
+    left outer join room r on l.rno=r.rno
+    left outer join memb m on l.mno=m.mno;
+
+select l.lno, l.titl, l.rno, l.mno
+    from lect l;
+
+select l.lno, l.titl, r.name rname, l.mno
+    from lect l
+    left outer join room r on l.rno=r.rno;
+
+select 
+    l.lno, 
+    l.titl, 
+    r.name rname,
+    m.name mname,
+    mr.posi
+from lect l
+    left outer join room r on l.rno=r.rno
+    left outer join memb m on l.mno=m.mno
+    left outer join mgr mr on l.mno=mr.mno;
+
+select 
+    l.lno, 
+    l.titl, 
+    r.name rname,
+    m.name mname,
+    mr.posi
+from lect l
+    left outer join room r on l.rno=r.rno
+    left outer join memb m on l.mno=m.mno
+    left outer join mgr mr on l.mno=mr.mno;
+
+select 
+    la.lano,
+    la.rdt,
+    l2.title,
+    (select name from memb where mno=la.mno) sname,
+    (select work from stnt where mno=la.mno) work,
+    l2.rname,
+    l2.mname,
+    l2.posi
+from lect_appl la 
+    inner join (
+        select 
+            l.lno, 
+            l.titl, 
+            r.name rname,
+            m.name mname,
+            mr.posi
+        from lect l
+            left outer join room r on l.rno=r.rno
+            left outer join memb m on l.mno=m.mno
+            left outer join mgr mr on l.mno=mr.mno
+) l2 on la.lno=l2.lno;
+
+<더 나아가서 - 가상 테이블>
+select 
+    la.lano,
+    la.lno,
+    la.rdt,
+    m.name
+from lect_appl la
+    inner join memb m on la.mno=m.mno;
+
+select 
+    la.lano,
+    la.lno,
+    la.rdt,
+    m.name,
+    s.work
+from lect_appl la
+    inner join memb m on la.mno=m.mno
+    inner join stnt s on la.mno=s.mno;
+
+select 
+    la2.lano,
+    la2.rdt,
+    la2.sname,
+    la2.work,
+    l2.titl,
+    l2.rname,
+    l2.mname,
+    l2.posi
+from (
+    select 
+        la.lano,
+        la.lno,
+        la.rdt,
+        m.name sname,
+        s.work
+    from lect_appl la
+        inner join memb m on la.mno=m.mno
+        inner join stnt s on la.mno=s.mno
+    ) la2 
+    inner join (
+        select 
+            l.lno, 
+            l.titl, 
+            r.name rname,
+            m.name mname,
+            mr.posi
+        from lect l
+            left outer join room r on l.rno=r.rno
+            left outer join memb m on l.mno=m.mno
+            left outer join mgr mr on l.mno=mr.mno
+) l2 on l2.lno=l2.lno;
+
