@@ -22,8 +22,9 @@ public class Exam0120 {
     // => Resources 클래스의 메서드를 이용하면
     //    자바 클래스가 있는 패키지 폴더의 mybatis 설정 파일을 바로 지정할 수 있다.
     //
-    InputStream mybatisConfigInputStream = Resources.getResourceAsStream( // fileInputStream 리턴
+    InputStream mybatisConfigInputStream = Resources.getResourceAsStream( 
         "com/eomcs/mybatis/ex01/a/mybatis-config.xml");
+    // Resources.getResourceAsStream: fileInputStream 을 리터해준다.
     // => 파라미터에 전달할 mybatis 설정 파일의 경로를 지정할 때,
     //    자바 패키지 경로를 그대로 지정하면 된다.
     //    프로젝트의 경로를 지정할 필요가 없다.

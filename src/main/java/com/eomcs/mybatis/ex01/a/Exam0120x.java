@@ -25,31 +25,29 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 // groovy -> gradle 설정파일에 사용됨 => DSL
 //
 // Mybatis 도입
-
-// 1) Mybatis 라이브러리 파일을 프로젝트에 등록하기(의존 라이브러리 추가)
-//    - mvnrepository.com 또는 search.maven.org에서 mybatis를 검색하여 
-//      라이브러리 정보를 알아낸다.
-//    - build.gradle 파일에 의존 라이브러리 정보를 추가한다.
-//    - "gradle eclipse" 를 실행하여 라이브러리를 다운로드 받고, 이클립스 설정 파일에 등록한다.
-//    - 이클립스 에디터에서 프로젝트를 "refresh" 하여 변경된 설정 파일의 정보를 반영한다.
-
+// 1) 의존 라이브러리 추가
+//    - mvnrepository.com 를 검색하여 build.gradle 파일에 추가한다.
+//    - "gradle eclipse" 실행한 후 이클립스 에디터에서 프로젝트를 "refresh" 한다.
 // 2) mybatis 설정 파일 준비
-//    - mybatis.org 사이트에서 문서 페이지를 참조한다.
-//    - mybatis 설정 파일 (예: mybatis-config.xml)을 생성한다.
-//    - 문서 페이지를 참조하여 설정 파일의 내용을 변경한다.
+//    - mybatis-config.xml 생성 및 편집
+// 3) DB 연결 정보를 담은 프로퍼티 파일 준비
+//    - jdbc.properties 생성 및 편집
+// 4) SQL 문장을 작성할 파일 준비
+//    - BoardMapper.xml 생성 및 편집
+// 5) Mybatis 객체 준비
 //
-public class Exam0110 {
+public class Exam0120x {
 
   public static void main(String[] args) throws Exception {
     // 1. mybatis 설정 파일을 읽을 InputStream 도구를 준비한다.
     // 1) 직접 파일 시스템 경로를 지정하기
     // => 단 소스 파일 경로를 지정하지 말아라.
-    // => 컴파일된 후 XML 파일이 놓이는 경로를 지정해라. (class 파일들 있는 곳)
+    // => 컴파일된 후 XML 파일이 놓이는 경로를 지정해라.
     // => 자바 패키지에 작성한 일반 파일은 그대로 빌드 디렉토리에 복사된다.
-    // => 예) 프로젝트폴더/bin/main/com/eomcs/mybatis/ex01/a/mybatis-config.xml
+    // => 예) 프로젝트폴더/bin/main/com/eomcs/mybatis/ex01/mybatis-config.xml
     //
     InputStream mybatisConfigInputStream = new FileInputStream(//
-        "./bin/main/com/eomcs/mybatis/ex01/a/mybatis-config.xml");
+        "./bin/main/com/eomcs/mybatis/ex01/mybatis-config.xml");
 
     // 2. SqlSessionFactory를 만들어 줄 빌더 객체 준비
     //
@@ -58,8 +56,8 @@ public class Exam0110 {
     // 3. SqlSession 객체를 만들어 줄 팩토리 객체 준비
     // => mybatis는 Builder를 이용하여 SqlSessionFactory 객체를 만든다.
     // => 이때 공장 객체를 만들 때 사용할 설정 파일을 지정한다.
-    // => 설정 파일의 경로를 직접 지정하지 말고, // => 불가능 (String을 바로 넣을 수 없다)
-    //    해당 파일을 읽을 때 사용할 InputStream을 넘겨줘라.
+    // => 설정 파일의 경로를 직접 지정하지 말고,
+    // 해당 파일을 읽을 때 사용할 InputStream을 넘겨줘라.
     //
     SqlSessionFactory factory = factoryBuilder.build(mybatisConfigInputStream);
 
@@ -69,9 +67,9 @@ public class Exam0110 {
     // => 자동 커밋으로 SQL을 다루고 싶다면,
     // openSession(boolean autoCommit) 메서드를 호출하라.
     //
-    SqlSession sqlSession = factory.openSession(); 
+    SqlSession sqlSession = factory.openSession();
 
-    System.out.println("mybatis 사용 준비 완료!");
+    System.out.println("mybatis 준비 완료!");
 
     sqlSession.close();
   }
