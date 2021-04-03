@@ -4,6 +4,7 @@ package com.eomcs.basic.ex01;
 //클래스를 정의할 때 수퍼 클래스를 지정하지 않으면 
 //컴파일러는 자동으로 Object를 상속 받는다.
 public class Exam0110 /*extends Object*/ {
+  // extends Object 가 모든 클래스들에 자동적으로 지정되어있다.
 
   static class My /*extends Object*/ {
   }
@@ -46,7 +47,7 @@ public class Exam0110 /*extends Object*/ {
 // 2) equals()
 //    => 같은 인스턴스인지 검사한다. 
 // 3) hashCode()
-//    => 인스턴스를 식별하는 값을 리턴한다.
+//    => 인스턴스를 식별하는 값(hashCode)을 리턴한다.
 // 4) getClass()
 //    => 인스턴스의 클래스 정보를 리턴한다.
 // 5) clone()
