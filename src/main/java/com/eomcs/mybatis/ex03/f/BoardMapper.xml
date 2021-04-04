@@ -55,6 +55,9 @@
     order by ${sort}
   </select>
   
+  <!-- 
+     ${} 는 SQL 코드를 삽입할 수 있다.
+   -->  
   <select id="countRecords" resultType="int" parameterType="string">
     select 
       count(*)
