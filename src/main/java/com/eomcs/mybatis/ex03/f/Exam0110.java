@@ -1,4 +1,5 @@
 // #{} 과 ${} 차이점 => #{} 문법의 한계
+// SQL문이 삽입되었기 때문에 오류가 발생한다.
 package com.eomcs.mybatis.ex03.f;
 
 import java.util.List;
