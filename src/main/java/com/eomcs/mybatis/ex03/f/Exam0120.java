@@ -15,7 +15,7 @@ public class Exam0120 {
 
     // 정렬 방식을 파라미터로 넘기기
     // => ${} 문법은 파라미터 값을 SQL 문에 그대로 삽입한다.
-    // 
+    // => #{} 문법과 달리 오류가 발생하지 않는다.
     List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard2", "desc");
 
     for (Board b : boards) {

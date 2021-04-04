@@ -27,6 +27,9 @@
     order by board_id #{sortType} <!-- string값이 sortType에 들어올 예정 -->
   </select>
   
+  <!-- 
+     ${} 는 SQL 코드를 삽입할 수 있다.
+   -->
   <select id="selectBoard2" resultMap="BoardMap" parameterType="string">
     select 
       board_id, 
