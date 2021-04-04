@@ -1,4 +1,4 @@
-// #{} 과 ${} 차이점 => ${} 문법의 활용 II
+// #{} 과 ${} 차이점 => ${} 문법의 쓰임새 II
 package com.eomcs.mybatis.ex03.f;
 
 import java.util.List;
@@ -17,7 +17,7 @@ public class Exam0130 {
     // => ${} 문법은 파라미터 값을 SQL 문에 그대로 삽입한다.
     // 
     List<Board> boards = sqlSession.selectList("BoardMapper.selectBoard3", 
-        "created_date desc, title asc");
+        "created_date desc, title asc"); // 정렬 방식 조절
 
     for (Board b : boards) {
       System.out.printf("%d,%s,%s,%s,%d\n", 
