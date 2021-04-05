@@ -63,6 +63,20 @@
       count(*)
     from ${tableName}
   </select>
+  
+  
+  <!-- delete,insert,update 모두 executeUpdate를 사용하기 때문에
+       delete를 할 때도 insert를 사용해도 똑같이 동작한다.
+       하지만 직관적으로 delete를 사용해주자 -->
+  <delete id="delete1" parameterType="string">
+    delete from x_board
+    where title=#{value}
+  </delete>
+  
+  <delete id="delete2" parameterType="string">
+    delete from x_board
+    where ${condition}
+  </delete>
 </mapper>
 
 
