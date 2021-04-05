@@ -1,0 +1,63 @@
+// Dynamic SQL - if 태그 사용법(사용 전)
+package com.eomcs.mybatis.ex04.b;
+
+import java.util.List;
+import java.util.Scanner;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import com.eomcs.mybatis.vo.Board;
+
+public class Exam0110 {
+
+  public static void main(String[] args) throws Exception {
+    Scanner keyboard = new Scanner(System.in);
+
+    System.out.print("검색 항목:\n  1. 제목\n  2. 내용\n검색 항목? ");
+    int menuNo = Integer.parseInt(keyboard.nextLine());
+
+    //    if (!(menuNo == 1 || menuNo == 2)) { // 검색 항목 번호가 1번도 아니고 2번도 아니라면
+    //      System.out.println("검색 항목 번호가 올바르지 않습니다.");
+    //      keyboard.close();
+    //      return;
+    //    }
+
+    System.out.print("검색어? ");
+    String keyword = keyboard.nextLine();
+
+    keyboard.close();
+
+    SqlSession sqlSession = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream( 
+        "com/eomcs/mybatis/ex04/b/mybatis-config.xml")).openSession();
+
+    // 조건이 달라지면 SQL 문도 바뀌어야 한다.
+    // 'select1'은 제목으로 게시글을 검색하는 SQL 문이고,
+    // 'select2'는 내용으로 게시글을 검색하는 SLQ 문이다.
+    // 
+    List<Board> boards = null;
+
+    // 검색 항목 선택에 따라 SQL 문이 달라지기 때문에
+    // 다음과 같이 where 절의 일부분만 다른,
+    // SQL 문을 여러 개 작성해야 한다.
+    // 그리고 조건에 따라 실행할 SQL 문을 구분해서 호출해야 한다.
+    //
+    if (menuNo == 1) {
+      boards = sqlSession.selectList("BoardMapper.select1", keyword);
+    } else if (menuNo == 2) {
+      boards = sqlSession.selectList("BoardMapper.select2", keyword);
+    }
+
+    for (Board b : boards) {
+      System.out.printf("%d,%s,%s,%s,%d\n", 
+          b.getNo(),
+          b.getTitle(),
+          b.getContent(),
+          b.getRegisteredDate(),
+          b.getViewCount());
+    }
+
+    sqlSession.close();
+  }
+}
+
+
