@@ -1,4 +1,4 @@
-// URL(Uniform Resource Locator) - URL을 다루는 클래스
+// URL(Uniform Resource Locator) - URL을 다루는 도구를 가지고 있는 클래스
 package com.eomcs.net.ex07;
 
 import java.net.URL;
@@ -11,8 +11,8 @@ public class Exam01 {
     // - 프로토콜: http(80), https(443), ftp(21/20) 등
     // - 서버주소: IP 주소(192.168.0.1), 도메인명(www.bitcamp.co.kr)
     // - 포트번호: 80(생략할 수 있다), 8080(프록시 서버) 등
-    // - 자원의경로: /index.html, /board/list.jsp 등
-    // - 서버에 보내는 파라미터(Query String): 파라미터명=값&파라미터명=값
+    // - 자원의경로: /index.html, /board/list.jsp 등 // /news/ => news의 기본 문서를 달라!
+    // - 서버에 보내는 파라미터(Query String, QS): 파라미터명=값&파라미터명=값
     //
     // 자원
     // - 정적 자원(static)
