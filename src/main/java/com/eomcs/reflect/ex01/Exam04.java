@@ -9,17 +9,20 @@ class X {
   }
 }
 
+
 class Y {
   static {
     System.out.println("Y 클래스 로딩");
   }
 }
 
+
 class Z {
   static {
     System.out.println("Z 클래스 로딩");
   }
 }
+
 
 public class Exam04 {
 
@@ -33,10 +36,6 @@ public class Exam04 {
     // 이렇게 프로그램 아규먼트나 키보드 입력을 통해
     // 클래스 이름을 입력 받아서 로딩할 수 있다.
     Class.forName(className);
-    // -입력-
-    // com.eomcs.reflect.ex01.X
-    // com.eomcs.reflect.ex01.Y
-    // com.eomcs.reflect.ex01.Z
 
     // 그러나 다음과 같이 "class" 변수를 사용하게 되면
     // 코드로 이름을 고정하기 때문에 임의의 클래스를 로딩할 수 없다.
