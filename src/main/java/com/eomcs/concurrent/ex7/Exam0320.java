@@ -35,18 +35,22 @@ public class Exam0320 {
     // execute()와 같다.
     // => 단 작업의 종료 상태를 확인할 수 있는 Future 객체를 리턴한다.
     //
-    Future<?> future1 = executorService.submit(new MyRunnable(2000));
+    Future<?> future1 = executorService.submit(new MyRunnable(2000)); // submit : 작업 맡기기
     Future<?> future2 = executorService.submit(new MyRunnable(4000));
 
+    // Future : 그 작업이 끝났는지 아직 진행중인지 확인하는 용으로 쓰인다.
     // Future.get()
     // => 요청한 작업이 완료될 때 까지 기다린다.(pending)
     // => 요청한 작업이 완료되면 null을 리턴한다.
     //
-    future2.get();
+    future2.get(); // 두번째 작업이 끝난 후에 리턴된다. // 첫번째 작업이 끝나던 말던
     System.out.println("두 번째 작업이 끝났음");
 
     future1.get();
     System.out.println("첫 번째 작업이 끝났음");
+
+    // 첫 번째 작업은 이미 끝났지만 두 번째 작업이 덜 끝났기 때문에
+    // 두 번째 작업 끝났다는 메시지 출력 후 첫 번째 작업 끝난 메시지를 출력한다.
 
     System.out.println("main() 종료!");
   }
