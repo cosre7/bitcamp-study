@@ -36,19 +36,23 @@ public class Exam0220 {
 
     // 놀고 있는 스레드가 없으면 새 스레드를 생성한다.
     //
-    executorService.execute(new MyRunnable(6000));
-    executorService.execute(new MyRunnable(3000));
-    executorService.execute(new MyRunnable(9000));
-    executorService.execute(new MyRunnable(2000));
+    executorService.execute(new MyRunnable(6000)); // 스레드1
+    executorService.execute(new MyRunnable(1000)); // 스레드2
+    executorService.execute(new MyRunnable(9000)); // 스레드3
+    executorService.execute(new MyRunnable(2000)); // 스레드4
 
-    // 작업을 끝낸 스레드가 생길 때까지 일부러 기다린다.
-    //
-    Thread.sleep(3000);
+    // 작업을 끝낸 스레드가 생길 때까지 일부러 기다린다. 
+    // 기다리는 단계가 없으면 동시에 5개의 스레드가 생긴다.
+    Thread.sleep(3000); // 스레드4가 종료될 수 있는 시간
+
+    // 스레드4 종료
 
     // 그러면 새 스레드를 생성하지 않고
     // 작업을 끝낸 스레드가 요청한 작업을 처리한다.
     //
-    executorService.execute(new MyRunnable(4000));
+    executorService.execute(new MyRunnable(4000)); // 종료된 스레드4 다시 실행 
+    // 먼저 깨어났다고 먼저 일을 시키지 않는다.
+    // 스레드풀에 있는 아무나에게 일을 시킨다.
 
     System.out.println("main() 종료!");
   }
