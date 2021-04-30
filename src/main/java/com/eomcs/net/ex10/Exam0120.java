@@ -1,4 +1,4 @@
-// Base64 인코딩 : 이미지 파일 --> 인코딩
+// Base64 인코딩 : 이미지 파일 --> 인코딩 (응용)
 package com.eomcs.net.ex10;
 
 import java.io.File;
